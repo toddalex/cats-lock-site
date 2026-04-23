@@ -1,2 +1,2 @@
 # cats-lock-site
-Website for Cats Lock, the macOS keyboard lock for cat owners.
+catslock.app — marketing and legal pages.
