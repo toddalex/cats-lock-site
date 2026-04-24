@@ -3,58 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cats Lock — macOS keyboard lock for cat owners</title>
-<meta name="description" content="A macOS utility that locks your keyboard when a cat approaches.">
+<title>Cats Lock — Keyboard lock for cat people</title>
+<meta name="description" content="Lock the keys. Love the cat. A macOS menu bar utility that locks your keyboard in one click, so your cat can curl up on the keys without writing anything.">
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="Cats Lock — Lock the keys. Love the cat.">
+<meta property="og:description" content="A macOS menu bar utility that locks your keyboard in one click, so your cat can curl up on the keys without writing anything.">
+<meta property="og:image" content="https://catslock.app/assets/logo/mascot-keycap.png">
+<meta property="og:url" content="https://catslock.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
 <style>
   :root {
     --bg: #FEF8EF;
+    --card: #FFFDF7;
     --accent: #E8A838;
     --text: #2E2A26;
     --muted: #6B655F;
+    --border: rgba(0,0,0,0.06);
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
     color: var(--text);
     background: var(--bg);
-    text-align: center;
   }
-  main {
+
+  /* Hero */
+  .hero {
     max-width: 720px;
     margin: 0 auto;
-    padding: 64px 24px 48px;
+    padding: 72px 24px 24px;
+    text-align: center;
   }
-  img.hero {
+  .hero img.logo {
     width: 100%;
-    max-width: 480px;
+    max-width: 420px;
     height: auto;
     display: block;
-    margin: 0 auto 32px;
+    margin: 0 auto 40px;
   }
-  h1 {
-    font-size: 2.4rem;
-    margin: 0 0 12px;
+  .hero h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
     letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    font-weight: 800;
   }
-  p.tagline {
+  .hero p.tagline {
     font-size: 1.15rem;
     color: var(--muted);
-    margin: 0 0 40px;
+    max-width: 520px;
+    margin: 0 auto 32px;
   }
-  .soon {
-    display: inline-block;
+  .launch-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: var(--accent);
     color: white;
-    padding: 12px 24px;
+    padding: 14px 26px;
     border-radius: 999px;
     font-weight: 600;
     letter-spacing: 0.01em;
+    font-size: 1rem;
+    box-shadow: 0 4px 16px rgba(232, 168, 56, 0.25);
   }
+  .launch-pill .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  .launch-sub {
+    display: block;
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  /* Features */
+  .features {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 24px 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .feature h3 {
+    font-size: 1.25rem;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+  .feature.wide {
+    grid-column: span 2;
+  }
+
+  /* Small screens: one column */
+  @media (max-width: 720px) {
+    .features { grid-template-columns: 1fr; padding: 48px 20px 16px; }
+    .feature.wide { grid-column: span 1; }
+    .hero h1 { font-size: 2.1rem; }
+    .hero { padding-top: 56px; }
+  }
+
+  /* Footer */
   footer {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    max-width: 720px;
+    margin: 32px auto 0;
+    padding: 32px 24px 48px;
+    text-align: center;
+    border-top: 1px solid var(--border);
     color: var(--muted);
     font-size: 0.9rem;
   }
@@ -63,14 +151,62 @@
 </style>
 </head>
 <body>
-<main>
-  <img class="hero" src="mascot_keycap_1024.png" alt="Cats Lock keycap logo">
-  <h1>Cats Lock</h1>
-  <p class="tagline">Paws off my keyboard. A playful macOS utility that locks your keyboard when a cat approaches.</p>
-  <span class="soon">Coming soon to the Mac App Store</span>
-  <footer>
-    <a href="/privacy.html">Privacy Policy</a> · <a href="mailto:meow@catslock.app">meow@catslock.app</a> · © 2026 Cats Lock
-  </footer>
-</main>
+
+<section class="hero">
+  <img class="logo" src="assets/logo/mascot-keycap.png" alt="Cats Lock">
+  <h1>Finally, a way to cat-proof your keyboard.</h1>
+  <p class="tagline">
+    A macOS app for cat people.
+  </p>
+  <span class="launch-pill">
+    <span class="dot"></span>
+    Launching May 15, 2026
+    <span class="dot"></span>
+  </span>
+  <span class="launch-sub">Coming soon to the Mac App Store</span>
+</section>
+
+<section class="features">
+
+  <article class="feature wide">
+    <img src="assets/screenshots/01-hero.png" alt="Cats Lock main window with mascot and Enable button">
+    <h3>One click. Keyboard locked.</h3>
+    <p>Click the menu bar pawprint, press ⌘⌥L, or use the main window. Every key is blocked instantly.</p>
+  </article>
+
+  <article class="feature">
+    <img src="assets/screenshots/02-settings.png" alt="Cats Lock settings showing Launch at Login and Stealth Lock toggles">
+    <h3>Your lock, your way.</h3>
+    <p>A few clean toggles. No menu diving. Launch at login, change the sound, flip on Stealth mode.</p>
+  </article>
+
+  <article class="feature">
+    <img src="assets/screenshots/03-sound.png" alt="Sound picker with seven built-in sounds">
+    <h3>Pick your feline deterrent.</h3>
+    <p>Seven built-in sounds. Bring your own. Or stay silent.</p>
+  </article>
+
+  <article class="feature">
+    <img src="assets/screenshots/04-overlay.png" alt="Cats Lock enabled overlay locking the keyboard">
+    <h3>Locked. Until you say so.</h3>
+    <p>Walk away. Nothing gets typed. Press ⌘⌥L to release.</p>
+  </article>
+
+  <article class="feature">
+    <img src="assets/screenshots/05-menubar.png" alt="Cats Lock menu bar dropdown with enable, stealth lock, and launch at login">
+    <h3>Lives in the menu bar.</h3>
+    <p>Always a click away. Never in the way.</p>
+  </article>
+
+</section>
+
+<footer>
+  <a href="/privacy.html">Privacy Policy</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:meow@catslock.app">meow@catslock.app</a>
+  &nbsp;·&nbsp;
+  © 2026 Cats Lock
+</footer>
+
 </body>
 </html>
