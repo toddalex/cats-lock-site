@@ -243,15 +243,32 @@
     <span class="signup-headline">Be there on launch day.</span>
     <span class="signup-label">One email on May 15. Then we go quiet.</span>
     <form
+      id="signup-form"
       action="https://buttondown.com/api/emails/embed-subscribe/catslock"
       method="post"
-      target="popupwindow"
-      onsubmit="window.open('https://buttondown.com/catslock', 'popupwindow')"
     >
       <input type="email" name="email" placeholder="you@example.com" required>
       <button type="submit">Notify me</button>
     </form>
+    <span id="signup-thanks" class="signup-headline" hidden>Thanks! See you May 15. 🐾</span>
     <span class="signup-fineprint">No spam. Unsubscribe anytime.</span>
+    <script>
+      (function(){
+        var form = document.getElementById('signup-form');
+        var thanks = document.getElementById('signup-thanks');
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var data = new FormData(form);
+          fetch(form.action, { method: 'POST', mode: 'no-cors', body: data })
+            .catch(function(){})
+            .finally(function(){
+              form.reset();
+              form.hidden = true;
+              thanks.hidden = false;
+            });
+        });
+      })();
+    </script>
   </div>
 </section>
 
