@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press Kit — Cats Lock</title>
+<meta name="description" content="Press kit, screenshots, and brand assets for Cats Lock, a macOS menu bar utility that locks the keyboard in one click.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+<meta property="og:title" content="Cats Lock — Press Kit">
+<meta property="og:description" content="Press kit, screenshots, and brand assets for Cats Lock.">
+<meta property="og:image" content="https://catslock.app/assets/logo/mascot-keycap.png">
+<meta property="og:url" content="https://catslock.app/press">
+<meta property="og:type" content="website">
+
+<style>
+  :root {
+    --bg: #FEF8EF;
+    --card: #FFFDF7;
+    --accent: #E8A838;
+    --text: #2E2A26;
+    --muted: #6B655F;
+    --border: rgba(0,0,0,0.06);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .nav {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav a.home {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .header {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px 24px 16px;
+  }
+  .header h1 {
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .header p {
+    color: var(--muted);
+    margin: 0 0 24px;
+    max-width: 640px;
+  }
+  .download-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    box-shadow: 0 4px 16px rgba(232, 168, 56, 0.25);
+    transition: transform 0.15s ease;
+  }
+  .download-pill:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+  section h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    font-weight: 700;
+  }
+  section h3 {
+    font-size: 1.05rem;
+    margin: 24px 0 6px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+  }
+
+  /* Quick facts */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .fact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .fact .label {
+    color: var(--muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .fact .value {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* Boilerplate */
+  .copy-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 8px;
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+  .copy-block p { margin: 0; }
+  .copy-block + .copy-block { margin-top: 14px; }
+
+  /* Asset grid */
+  .assets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+  }
+  .asset {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .asset .preview {
+    background: #FFF4DD;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+  }
+  .asset .preview {
+    min-height: 220px;
+  }
+  .asset .preview img {
+    max-width: 95%;
+    max-height: 200px;
+    height: auto;
+  }
+  .asset .meta {
+    padding: 14px;
+    font-size: 0.88rem;
+  }
+  .asset .name {
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .asset .download {
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+
+  /* Screenshots */
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  .screen {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .screen img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .screen .meta {
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+
+  /* Contact */
+  .contact .row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    align-items: baseline;
+  }
+  .contact .row .label {
+    color: var(--muted);
+    min-width: 90px;
+    font-size: 0.92rem;
+  }
+
+  footer {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.9rem; }
+    section { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="home" href="/">← catslock.app</a>
+</div>
+
+<header class="header">
+  <h1>Press Kit</h1>
+  <p>Everything you need to write about Cats Lock: assets, copy, contacts. For questions or a review build, email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
+  <a class="download-pill" href="assets/press/cats-lock-press-kit.zip" download>⬇ Download all assets (ZIP)</a>
+</header>
+
+<section>
+  <h2>Quick facts</h2>
+  <div class="facts">
+    <div class="fact">
+      <div class="label">App name</div>
+      <div class="value">Cats Lock</div>
+    </div>
+    <div class="fact">
+      <div class="label">Launch date</div>
+      <div class="value">May 15, 2026</div>
+    </div>
+    <div class="fact">
+      <div class="label">Platform</div>
+      <div class="value">macOS (Mac App Store)</div>
+    </div>
+    <div class="fact">
+      <div class="label">Price</div>
+      <div class="value">$2.99 (one-time)</div>
+    </div>
+    <div class="fact">
+      <div class="label">Subscriptions</div>
+      <div class="value">None</div>
+    </div>
+    <div class="fact">
+      <div class="label">Tracking / Analytics</div>
+      <div class="value">None</div>
+    </div>
+    <div class="fact">
+      <div class="label">Sandbox</div>
+      <div class="value">Yes (App Store sandboxed)</div>
+    </div>
+    <div class="fact">
+      <div class="label">Account required</div>
+      <div class="value">No</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>About Cats Lock</h2>
+
+  <h3>Short (50 words)</h3>
+  <div class="copy-block">
+    <p>Cats Lock is a Mac desktop app that blocks your keyboard with ⌘L so your cat can walk on it without sending chaos into your work. A friendly overlay shows when locked; Stealth Lock keeps it silent and invisible for meetings. $2.99 one-time, sandboxed, no subscriptions. Menu bar access included.</p>
+  </div>
+
+  <h3>Medium (150 words)</h3>
+  <div class="copy-block">
+    <p>Cats Lock is a Mac desktop app for people who share a desk with a cat. With one press of ⌘L from the main window or the menu bar, the keyboard locks instantly so your cat can settle in for a nap, walk across the keys, or knead the trackpad without sending chaos into your active app. A friendly overlay appears while locked, and a customizable warning sound plays on each blocked keypress so you can hear from the next room when your cat has joined the keyboard. Stealth Lock mode keeps the lock silent and invisible, useful during meetings or recordings. The app is fully sandboxed for the Mac App Store, requires no account, runs no analytics, and is sold once at $2.99 with no subscription. Built by indie developer Todd Alexander for him and his cat to enjoy.</p>
+  </div>
+
+  <h3>Long (300 words)</h3>
+  <div class="copy-block">
+    <p>Cats Lock is a Mac desktop app for people who share a desk with a cat. The interaction is intentionally minimal: one press of ⌘L from the main window or the menu bar locks the keyboard, so your cat can stretch out, walk across the keys, or settle in for a nap without sending anything into your active app. While locked, a friendly full-screen overlay shows the lock state, and a customizable warning sound plays on each blocked keypress. Useful as an audible cue from the next room when your cat has joined the keyboard while you're away from the desk, or just pure enjoyable and shareable content.</p>
+    <p>Stealth Lock mode swaps that experience for a silent, invisible variant. The keyboard is still blocked, but no overlay appears and no sound plays, which is helpful if you want to lock the keyboard during a meeting, recording, or call without any visual or audio side effect. Stealth-mode unlock requires the ⌘L shortcut.</p>
+    <p>Cats Lock is built fully within the App Store sandbox. There is no Accessibility prompt, no analytics SDK, no account creation, and no telemetry. It is sold for $2.99 as a one-time purchase with no subscription tier and no upsells. The app was built by indie developer Todd Alexander for him and his cat to enjoy: a small, complete utility designed to install, fade into the background, and only matter the moment a cat decides the keyboard looks comfortable.</p>
+    <p>The app is available on the Mac App Store starting May 15, 2026.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Logos & icons</h2>
+  <div class="assets">
+    <a class="asset" href="assets/press/mascot_keycap_1024.png" download>
+      <div class="preview"><img src="assets/press/mascot_keycap_1024.png" alt="Main Keycap Logo"></div>
+      <div class="meta">
+        <div class="name">Main Keycap Logo</div>
+        <div class="download">1024×1024 PNG</div>
+      </div>
+    </a>
+    <a class="asset" href="assets/press/icon_with_text_1024.png" download>
+      <div class="preview"><img src="assets/press/icon_with_text_1024.png" alt="Logo with text"></div>
+      <div class="meta">
+        <div class="name">Logo + wordmark</div>
+        <div class="download">1024×1024 PNG</div>
+      </div>
+    </a>
+    <a class="asset" href="assets/press/icon_logo_only_fill_1024.png" download>
+      <div class="preview"><img src="assets/press/icon_logo_only_fill_1024.png" alt="App icon"></div>
+      <div class="meta">
+        <div class="name">App icon</div>
+        <div class="download">1024×1024 PNG</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Promo tiles</h2>
+  <p style="color: var(--muted); margin: -8px 0 18px;">Branded 16:10 hero images for article leads, App Store roundups, and social previews.</p>
+  <div class="screens">
+    <a class="screen" href="assets/screenshots/01-hero.png" download>
+      <img src="assets/screenshots/01-hero.png" alt="Cats Lock main window, unlocked">
+      <div class="meta">01 · Main window (unlocked) · 2880×1800</div>
+    </a>
+    <a class="screen" href="assets/screenshots/02-settings.png" download>
+      <img src="assets/screenshots/02-settings.png" alt="Cats Lock settings panel">
+      <div class="meta">02 · Settings · 2880×1800</div>
+    </a>
+    <a class="screen" href="assets/screenshots/03-sound.png" download>
+      <img src="assets/screenshots/03-sound.png" alt="Sound picker">
+      <div class="meta">03 · Sound picker · 2880×1800</div>
+    </a>
+    <a class="screen" href="assets/screenshots/04-overlay.png" download>
+      <img src="assets/screenshots/04-overlay.png" alt="Locked overlay">
+      <div class="meta">04 · Locked overlay · 2880×1800</div>
+    </a>
+    <a class="screen" href="assets/screenshots/05-menubar.png" download>
+      <img src="assets/screenshots/05-menubar.png" alt="Menu bar dropdown">
+      <div class="meta">05 · Menu bar · 2880×1800</div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Raw UI screenshots</h2>
+  <p style="color: var(--muted); margin: -8px 0 18px;">Clean window grabs with system chrome. Best for inline article use, annotation, or zooming into specific UI elements.</p>
+  <div class="screens">
+    <a class="screen" href="assets/press/raw/01-hero.png" download>
+      <img src="assets/press/raw/01-hero.png" alt="Cats Lock main window">
+      <div class="meta">01 · Main window · 1064×1088</div>
+    </a>
+    <a class="screen" href="assets/press/raw/02-settings.png" download>
+      <img src="assets/press/raw/02-settings.png" alt="Settings panel">
+      <div class="meta">02 · Settings · 1064×1088</div>
+    </a>
+    <a class="screen" href="assets/press/raw/03-sound.png" download>
+      <img src="assets/press/raw/03-sound.png" alt="Sound picker">
+      <div class="meta">03 · Sound picker · 1064×1088</div>
+    </a>
+    <a class="screen" href="assets/press/raw/04-overlay.png" download>
+      <img src="assets/press/raw/04-overlay.png" alt="Locked overlay full screen">
+      <div class="meta">04 · Locked overlay · 3456×2234</div>
+    </a>
+    <a class="screen" href="assets/press/raw/05-menubar.png" download>
+      <img src="assets/press/raw/05-menubar.png" alt="Menu bar dropdown">
+      <div class="meta">05 · Menu bar · 1064×1088</div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Promo video</h2>
+  <div class="card">
+    <p style="margin: 0; color: var(--muted);">Demo video and downloadable MP4 will be added on launch day. For an early review build, please email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Developer</h2>
+  <div class="card">
+    <p style="margin: 0 0 8px;"><strong>Todd Alexander</strong> is a Senior Software Engineer at Paramount and independent Mac developer based in Los Angeles. Cats Lock is his first solo Mac App Store release.</p>
+    <p style="margin: 0; color: var(--muted);">LinkedIn: <a href="https://www.linkedin.com/in/toddalex/" target="_blank" rel="noopener">linkedin.com/in/toddalex</a></p>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <div class="row"><div class="label">Press</div><div><a href="mailto:meow@catslock.app">meow@catslock.app</a></div></div>
+    <div class="row"><div class="label">Twitter / X</div><div><a href="https://x.com/catslockapp" target="_blank" rel="noopener">@catslockapp</a></div></div>
+    <div class="row"><div class="label">Instagram</div><div><a href="https://instagram.com/catslockapp" target="_blank" rel="noopener">@catslockapp</a></div></div>
+    <div class="row"><div class="label">TikTok</div><div><a href="https://tiktok.com/@catslockapp" target="_blank" rel="noopener">@catslockapp</a></div></div>
+    <div class="row"><div class="label">Site</div><div><a href="https://catslock.app">catslock.app</a></div></div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Cats Lock™ · <a href="/">catslock.app</a> · <a href="/privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
