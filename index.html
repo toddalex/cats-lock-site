@@ -135,8 +135,13 @@
     grid-column: 1 / -1;
   }
   @media (max-width: 600px) {
+    .signup-section {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
     .signup {
       grid-template-columns: 1fr;
+      padding: 20px;
     }
     .signup-headline,
     .signup-label,
@@ -144,6 +149,17 @@
     .signup-fineprint {
       grid-column: 1;
       grid-row: auto;
+    }
+    .signup form {
+      min-width: 0;
+    }
+    .signup input[type="email"] {
+      padding: 8px 12px;
+      min-width: 0;
+    }
+    .signup button {
+      padding: 8px 14px;
+      flex-shrink: 0;
     }
   }
   .signup form {
