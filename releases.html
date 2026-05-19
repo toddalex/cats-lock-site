@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release notes — Cats Lock</title>
+<meta name="description" content="What's new in Cats Lock, the macOS menu bar utility that locks the keyboard so your cat can't.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+<meta property="og:title" content="Cats Lock — Release notes">
+<meta property="og:description" content="What's new in Cats Lock.">
+<meta property="og:image" content="https://catslock.app/assets/logo/mascot-keycap.png">
+<meta property="og:url" content="https://catslock.app/releases">
+<meta property="og:type" content="website">
+
+<style>
+  :root {
+    --bg: #FEF8EF;
+    --card: #FFFDF7;
+    --accent: #E8A838;
+    --text: #2E2A26;
+    --muted: #6B655F;
+    --border: rgba(0,0,0,0.06);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .nav {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav a.home {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .header {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px 24px 16px;
+  }
+  .header h1 {
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .header p {
+    color: var(--muted);
+    margin: 0 0 8px;
+    max-width: 640px;
+  }
+
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .release {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 28px 20px;
+    margin-bottom: 24px;
+  }
+  .release h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+  .release .meta {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+  .release h3 {
+    font-size: 1rem;
+    margin: 18px 0 6px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.01em;
+  }
+  .release ul {
+    margin: 0;
+    padding-left: 22px;
+  }
+  .release li {
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+  }
+  .release li strong {
+    font-weight: 700;
+  }
+  .release .gh-link {
+    display: block;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .release .gh-link a {
+    color: var(--muted);
+  }
+  .release .gh-link a:hover {
+    color: var(--accent);
+  }
+
+  footer {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+  }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.9rem; }
+    section { padding: 20px; }
+    .release { padding: 22px 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="home" href="/">← catslock.app</a>
+</div>
+
+<header class="header">
+  <h1>Release notes</h1>
+  <p>What's new in Cats Lock. Get the latest version on the <a href="https://apps.apple.com/app/cats-lock/id6763495406">Mac App Store</a>.</p>
+</header>
+
+<section>
+
+  <article class="release">
+    <h2>v1.1.0</h2>
+    <div class="meta">May 19, 2026</div>
+
+    <h3>New</h3>
+    <ul>
+      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app on the system. No need to bring Cats Lock to the foreground first.</li>
+      <li><strong>Customizable shortcut.</strong> Record your own combo in Settings. The same shortcut drives both the global hotkey and the in-process unlock.</li>
+      <li><strong>Hide from Dock.</strong> Optional menu-bar-only mode. No Dock icon, no Cmd+Tab presence. The menu bar icon and the main window stay accessible.</li>
+      <li><strong>Prevent sleep while locked.</strong> Holds the display awake while the keyboard is locked so the overlay stays visible if you step away.</li>
+    </ul>
+
+    <h3>Improvements</h3>
+    <ul>
+      <li>First-time Stealth Lock now shows a quick confirmation so you know what to expect. Subsequent toggles apply silently.</li>
+      <li>Caps Lock no longer blocks unlock.</li>
+      <li>The warning sound stays quiet while you hold the unlock combo's modifier keys.</li>
+      <li>Launch at Login now boots quietly into the menu bar instead of opening the main window on every login.</li>
+      <li>Onboarding updated to introduce Stealth Lock, the unified unlock shortcut, and sleep prevention.</li>
+    </ul>
+
+    <h3>Under the hood</h3>
+    <ul>
+      <li>Main window rebuilt on AppKit so it can pull cleanly to the foreground in menu-bar-only mode.</li>
+      <li>Hardened Runtime enabled.</li>
+      <li>No new entitlements. Still fully sandboxed. Still no Accessibility prompt.</li>
+    </ul>
+
+  </article>
+
+  <article class="release">
+    <h2>v1.0.0</h2>
+    <div class="meta">May 15, 2026</div>
+
+    <h3>New</h3>
+    <ul>
+      <li>Initial public release on the Mac App Store.</li>
+      <li>Lock the keyboard with ⌘L from the main window or the menu bar.</li>
+      <li>Friendly overlay while locked, with customizable warning sound on each blocked keypress.</li>
+      <li>Stealth Lock mode for silent, invisible locking during meetings or recordings.</li>
+      <li>Launch at Login support.</li>
+      <li>Fully sandboxed. No Accessibility prompt. No account. No analytics.</li>
+    </ul>
+  </article>
+
+</section>
+
+<footer>
+  © 2026 Cats Lock&trade; · <a href="/">catslock.app</a> · <a href="/press.html">Press</a> · <a href="/privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
