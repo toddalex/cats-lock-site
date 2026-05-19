@@ -235,6 +235,47 @@
     display: block;
   }
 
+  /* Press strip */
+  .press {
+    max-width: 720px;
+    margin: 56px auto 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .press-label {
+    display: block;
+    color: var(--muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .press-outlets {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .press-outlets a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .press-outlets a:hover {
+    color: var(--accent);
+  }
+  .press-outlets .sep {
+    color: var(--muted);
+    margin: 0 14px;
+    font-weight: 400;
+  }
+  @media (max-width: 600px) {
+    .press { margin-top: 40px; }
+    .press-label { font-size: 0.85rem; }
+    .press-outlets { font-size: 1.15rem; }
+    .press-outlets .sep { margin: 0 8px; }
+  }
+
   /* Features */
   .features {
     max-width: 1080px;
@@ -325,6 +366,17 @@
     Download on the Mac App Store
   </a>
   <span class="launch-sub">$2.99 · One-time purchase · No subscriptions</span>
+</section>
+
+<section class="press">
+  <span class="press-label">Featured in</span>
+  <div class="press-outlets">
+    <a href="https://www.engadget.com/2174922/cats-lock-mac-app-locks-keyboard-to-prevent-chaos-when-your-cat-tramples-all-over-it/" target="_blank" rel="noopener">Engadget</a>
+    <span class="sep">·</span>
+    <a href="https://www.macrumors.com/2026/05/15/cats-lock-mac-app/" target="_blank" rel="noopener">MacRumors</a>
+    <span class="sep">·</span>
+    <a href="https://9to5mac.com/2026/05/16/indie-app-spotlight-cats-lock-is-a-fun-mac-app-that-solves-cat-keyboard-spam/" target="_blank" rel="noopener">9to5Mac</a>
+  </div>
 </section>
 
 <section class="signup-section">
