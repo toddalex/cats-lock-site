@@ -156,14 +156,29 @@
 <section>
 
   <article class="release">
+    <h2>v1.1.1</h2>
+    <div class="meta">May 20, 2026</div>
+
+    <h3>Bug fixes</h3>
+    <ul>
+      <li><strong>Shortcut label now shows the correct key on non-US keyboard layouts.</strong> German, French, Dvorak, and other layouts were showing "Key 30" or "Key 44" instead of the actual character. The lock itself always worked; only the displayed label was wrong. Thanks to Agnes for the detailed report.</li>
+    </ul>
+
+    <h3>Improvements</h3>
+    <ul>
+      <li><strong>macOS Sequoia icon variants.</strong> Added dark and tinted appearance variants so Cats Lock fits in cleanly when Sequoia users set Icon and widget style to Dark or Tinted. Light variant unchanged. Thanks to Stephen for flagging this.</li>
+    </ul>
+  </article>
+
+  <article class="release">
     <h2>v1.1.0</h2>
     <div class="meta">May 19, 2026</div>
 
     <h3>New</h3>
     <ul>
-      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app on the system. No need to bring Cats Lock to the foreground first.</li>
+      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app on the system. No need to bring Cats Lock to the foreground first. Thanks to Richard for the request.</li>
       <li><strong>Customizable shortcut.</strong> Record your own combo in Settings. The same shortcut drives both the global hotkey and the in-process unlock.</li>
-      <li><strong>Hide from Dock.</strong> Optional menu-bar-only mode. No Dock icon, no Cmd+Tab presence. The menu bar icon and the main window stay accessible.</li>
+      <li><strong>Hide from Dock.</strong> Optional menu-bar-only mode. No Dock icon, no Cmd+Tab presence. The menu bar icon and the main window stay accessible. Thanks to Bruce for the request.</li>
       <li><strong>Prevent sleep while locked.</strong> Holds the display awake while the keyboard is locked so the overlay stays visible if you step away.</li>
     </ul>
 
