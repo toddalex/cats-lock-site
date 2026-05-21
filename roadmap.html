@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roadmap — Cats Lock</title>
+<meta name="description" content="What's shipped and what's coming next in Cats Lock, the macOS menu bar utility that locks the keyboard so your cat can't.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+<meta property="og:title" content="Cats Lock — Roadmap">
+<meta property="og:description" content="What's shipped and what's coming next.">
+<meta property="og:image" content="https://catslock.app/assets/logo/mascot-keycap.png">
+<meta property="og:url" content="https://catslock.app/roadmap">
+<meta property="og:type" content="website">
+
+<style>
+  :root {
+    --bg: #FEF8EF;
+    --card: #FFFDF7;
+    --accent: #E8A838;
+    --text: #2E2A26;
+    --muted: #6B655F;
+    --border: rgba(0,0,0,0.06);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .nav {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav a.home {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .header {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px 24px 16px;
+  }
+  .header h1 {
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .header p {
+    color: var(--muted);
+    margin: 0 0 8px;
+    max-width: 700px;
+  }
+
+  section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .stage {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 28px 22px;
+    margin-bottom: 24px;
+  }
+  .stage h2 {
+    font-size: 1.4rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+  .stage .stage-meta {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+  .stage ul {
+    margin: 0;
+    padding-left: 22px;
+  }
+  .stage li {
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+  }
+  .stage li strong {
+    font-weight: 700;
+  }
+  .stage li .credit {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .stage-link {
+    display: block;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+
+  .footnote {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  footer {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+    text-align: center;
+  }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.9rem; }
+    section { padding: 20px; }
+    .stage { padding: 22px 20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a class="home" href="/">← catslock.app</a>
+</div>
+
+<header class="header">
+  <h1>Roadmap</h1>
+  <p>What's shipped, what's coming, and what's on the radar. Cats Lock is built by one developer and one cat, with releases shaped by customer feedback. If something here matters to you (or something's missing), email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
+</header>
+
+<section>
+
+  <article class="stage">
+    <h2>Shipped</h2>
+    <div class="stage-meta">Available now on the Mac App Store</div>
+
+    <ul>
+      <li><strong>v1.1.1</strong> (May 20, 2026) — shortcut label fix for non-US keyboard layouts, dark and tinted icon variants for macOS Sequoia.</li>
+      <li><strong>v1.1.0</strong> (May 19, 2026) — global lock shortcut, customizable shortcut, hide from Dock, prevent sleep while locked, first-time Stealth Lock confirmation.</li>
+      <li><strong>v1.0.0</strong> (May 15, 2026) — initial release on the Mac App Store.</li>
+    </ul>
+
+    <div class="stage-link"><a href="/releases.html">Detailed release notes →</a></div>
+  </article>
+
+  <article class="stage">
+    <h2>Up next: v1.2</h2>
+    <div class="stage-meta">In progress</div>
+
+    <ul>
+      <li><strong>Localization.</strong> Cats Lock translated into more languages, prioritized by where it's finding an audience.</li>
+      <li><strong>Desktop widget.</strong> One-click keyboard lock right from your desktop. No menu bar dropdown, no shortcut needed.</li>
+      <li><strong>Stats counter.</strong> See how many keystrokes Cats Lock has blocked for you.</li>
+      <li><strong>Menu bar icon picker.</strong> Choose from a few icon styles for the menu bar. <span class="credit">Requested by Agnes.</span></li>
+    </ul>
+  </article>
+
+  <article class="stage">
+    <h2>Coming after: v1.3</h2>
+    <div class="stage-meta">Power-user features behind a new Advanced section</div>
+
+    <ul>
+      <li><strong>Lock built-in keyboard only.</strong> Keep external keyboards working while the built-in is locked. <span class="credit">Requested by Steffen.</span></li>
+      <li><strong>Voice recording for the warning sound.</strong> Record your own short clip and use it as the warning sound. <span class="credit">Requested by Agnes.</span></li>
+      <li><strong>Custom overlay text.</strong> Change the message that appears on the lock screen.</li>
+      <li><strong>More ambient sounds.</strong> Purring, spa mode, and other calm sounds for when the cat wins.</li>
+    </ul>
+  </article>
+
+  <article class="stage">
+    <h2>Someday: v2.0</h2>
+    <div class="stage-meta">The big one</div>
+
+    <ul>
+      <li><strong>SmartLock.</strong> Automatic detection of when your cat is on the keyboard. We have ideas. We'll figure it out eventually.</li>
+    </ul>
+  </article>
+
+</section>
+
+<div class="footnote">
+  No dates on what's coming. Indie cadence, but the order is roughly the order things will ship.
+</div>
+
+<footer>
+  <div><a href="/press.html">Press</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/releases.html">Releases</a></div>
+  <div style="margin-top: 6px;"><a href="mailto:meow@catslock.app">meow@catslock.app</a> · © 2026 Cats Lock&trade;</div>
+  <div style="margin-top: 12px;"><a href="/">← catslock.app</a></div>
+</footer>
+
+</body>
+</html>
