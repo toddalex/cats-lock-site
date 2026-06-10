@@ -108,6 +108,10 @@
   .release li strong {
     font-weight: 700;
   }
+  .release li .credit {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
   .release .gh-link {
     display: block;
     margin-top: 22px;
@@ -162,7 +166,7 @@
     <h3>New</h3>
     <ul>
       <li><strong>Lock the function row (optional).</strong> A new opt-in toggle in Settings blocks the entire function row while locked (F1 through F12), including Mission Control, Spotlight, brightness, keyboard backlight, and the media keys. Because macOS treats these as system keys, this feature asks for Accessibility permission once, and it stays off until you turn it on. Everything else in Cats Lock still works with no permissions at all.</li>
-      <li><strong>Menu bar icon picker.</strong> Choose how Cats Lock looks in your menu bar from three brand-matching styles: Paw, Cat, and Cat Head. Each has a locked variant so the lock state reads clearly at menu bar size. Thanks to Agnes for the request.</li>
+      <li><strong>Menu bar icon picker.</strong> Choose how Cats Lock looks in your menu bar from three brand-matching styles: Paw, Cat, and Cat Head. Each has a locked variant so the lock state reads clearly at menu bar size. <span class="credit">Thanks to Agnes for the request.</span></li>
     </ul>
 
     <h3>Improvements</h3>
@@ -200,12 +204,12 @@
 
     <h3>Bug fixes</h3>
     <ul>
-      <li><strong>Shortcut label now shows the correct key on non-US keyboard layouts.</strong> German, French, Dvorak, and other layouts were showing "Key 30" or "Key 44" instead of the actual character. The lock itself always worked; only the displayed label was wrong. Thanks to Agnes for the detailed report.</li>
+      <li><strong>Shortcut label now shows the correct key on non-US keyboard layouts.</strong> German, French, Dvorak, and other layouts were showing "Key 30" or "Key 44" instead of the actual character. The lock itself always worked; only the displayed label was wrong. <span class="credit">Thanks to Agnes for the detailed report.</span></li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>macOS Sequoia icon variants.</strong> Added dark and tinted appearance variants so Cats Lock fits in cleanly when Sequoia users set Icon and widget style to Dark or Tinted. Light variant unchanged. Thanks to Stephen for flagging this.</li>
+      <li><strong>macOS Sequoia icon variants.</strong> Added dark and tinted appearance variants so Cats Lock fits in cleanly when Sequoia users set Icon and widget style to Dark or Tinted. Light variant unchanged. <span class="credit">Thanks to Stephen for flagging this.</span></li>
     </ul>
   </article>
 
@@ -215,9 +219,9 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app on the system. No need to bring Cats Lock to the foreground first. Thanks to Richard for the request.</li>
+      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app on the system. No need to bring Cats Lock to the foreground first. <span class="credit">Thanks to Richard for the request.</span></li>
       <li><strong>Customizable shortcut.</strong> Record your own combo in Settings. The same shortcut drives both the global hotkey and the in-process unlock.</li>
-      <li><strong>Hide from Dock.</strong> Optional menu-bar-only mode. No Dock icon, no Cmd+Tab presence. The menu bar icon and the main window stay accessible. Thanks to Bruce for the request.</li>
+      <li><strong>Hide from Dock.</strong> Optional menu-bar-only mode. No Dock icon, no Cmd+Tab presence. The menu bar icon and the main window stay accessible. <span class="credit">Thanks to Bruce for the request.</span></li>
       <li><strong>Prevent sleep while locked.</strong> Holds the display awake while the keyboard is locked so the overlay stays visible if you step away.</li>
     </ul>
 
