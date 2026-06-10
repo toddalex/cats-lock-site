@@ -156,6 +156,30 @@
 <section>
 
   <article class="release">
+    <h2>v1.2.0</h2>
+    <div class="meta">June 8, 2026</div>
+
+    <h3>New</h3>
+    <ul>
+      <li><strong>Lock the function row (optional).</strong> A new opt-in toggle in Settings blocks the entire function row while locked (F1 through F12), including Mission Control, Spotlight, brightness, keyboard backlight, and the media keys. Because macOS treats these as system keys, this feature asks for Accessibility permission once, and it stays off until you turn it on. Everything else in Cats Lock still works with no permissions at all.</li>
+      <li><strong>Menu bar icon picker.</strong> Choose how Cats Lock looks in your menu bar from three brand-matching styles: Paw, Cat, and Cat Head. Each has a locked variant so the lock state reads clearly at menu bar size. Thanks to Agnes for the request.</li>
+    </ul>
+
+    <h3>Improvements</h3>
+    <ul>
+      <li><strong>Prevent sleep while locked</strong> can now be toggled straight from the menu bar dropdown, no need to open Settings.</li>
+      <li><strong>Function keys give the same feedback</strong> as every other blocked key: the warning sound plays and the overlay flashes when your cat hits the top row.</li>
+      <li><strong>Live permission status.</strong> When function-key locking is on, the Accessibility warning now updates within about a second whether you grant or revoke permission in System Settings.</li>
+    </ul>
+
+    <h3>Bug fixes</h3>
+    <ul>
+      <li><strong>Reliable lock and unlock across many cycles.</strong> The lock shortcut could quietly stop responding after the first cycle when function-key blocking was enabled. It now works consistently every time.</li>
+      <li><strong>Caps Lock no longer triggers the warning sound</strong> at the moment you lock in.</li>
+    </ul>
+  </article>
+
+  <article class="release">
     <h2>v1.1.2</h2>
     <div class="meta">June 2, 2026</div>
 
