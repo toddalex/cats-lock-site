@@ -161,6 +161,22 @@
 <section>
 
   <article class="release">
+    <h2>v1.5.2</h2>
+    <div class="meta">August 4, 2026</div><!-- TODO(staged): confirm actual App Store live date before merging to main -->
+
+    <h3>Improvements</h3>
+    <ul>
+      <li><strong>Fewer false locks from an accidental brush of keys.</strong> Briefly bumping a few neighboring keys, or fast typing, no longer sets off a lock. A paw that settles on the keys still locks.</li>
+      <li><strong>Smarter handling of held keys.</strong> With "Ignore single-key holds" on, deliberately holding one key stays ignored, but a paw resting on two keys at once is still caught.</li>
+    </ul>
+
+    <h3>Bug fixes</h3>
+    <ul>
+      <li><strong>No more repeated re-locks.</strong> After Smart Detect engaged a lock it could keep re-triggering; it now pauses while locked and resumes when you unlock.</li>
+    </ul>
+  </article>
+
+  <article class="release">
     <h2>v1.5.1</h2>
     <div class="meta">August 1, 2026</div>
 
