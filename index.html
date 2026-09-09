@@ -233,15 +233,22 @@
     transform: translateX(-34.9%);
     bottom: 100%;
     width: 25%;
-    aspect-ratio: 793 / 393;
+    /* Crop to the head via the padding-box height (= 25% width * 393/793 = 12.39% of the
+       stage width), NOT aspect-ratio — Safari ignores aspect-ratio on this abs-positioned box
+       when the img child is intrinsically taller, showing the whole cat. Padding works everywhere. */
+    height: 0;
+    padding-bottom: 12.39%;
     overflow: hidden;
     z-index: 1;
     pointer-events: none;
     filter: drop-shadow(0 8px 10px rgba(58, 42, 24, 0.22));
   }
   .peek-cat {
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    display: block;
   }
   /* Small paw draped over the top edge, in front of the video, to the LEFT of the head */
   .peek-paw {
