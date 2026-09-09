@@ -10,6 +10,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&display=swap" rel="stylesheet">
 
 <meta property="og:title" content="Cats Lock — Press Kit">
 <meta property="og:description" content="Press kit, screenshots, and brand assets for Cats Lock.">
@@ -19,23 +22,26 @@
 
 <style>
   :root {
-    --bg: #FEF8EF;
-    --card: #FFFDF7;
+    --card: rgba(248, 251, 244, 0.32);
     --accent: #E8A838;
-    --text: #2E2A26;
-    --muted: #6B655F;
-    --border: rgba(0,0,0,0.06);
+    --text: #2C3626;
+    --muted: rgba(44, 54, 38, 0.62);
+    --border: rgba(255, 255, 255, 0.34);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
     color: var(--text);
-    background: var(--bg);
+    background: linear-gradient(158deg, #BCC7AC 0%, #98A985 100%) fixed;
+    min-height: 100vh;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  h1, h2, h3 {
+    font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  a { color: var(--text); text-decoration: none; transition: opacity 0.15s ease; }
+  a:hover { opacity: 0.6; }
 
   .nav {
     max-width: 920px;
@@ -46,7 +52,6 @@
     gap: 12px;
   }
   .nav a.home {
-    color: var(--muted);
     font-size: 0.95rem;
   }
 
@@ -70,18 +75,18 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--accent);
-    color: white;
+    background: #2C3626;
+    color: #F5F2E8;
     padding: 14px 24px;
     border-radius: 999px;
     font-weight: 600;
     font-size: 0.98rem;
-    box-shadow: 0 4px 16px rgba(232, 168, 56, 0.25);
+    box-shadow: 0 4px 16px rgba(44, 54, 38, 0.22);
     transition: transform 0.15s ease;
   }
   .download-pill:hover {
     transform: translateY(-1px);
-    text-decoration: none;
+    opacity: 1;
   }
 
   section {
@@ -107,6 +112,12 @@
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 24px;
+  }
+  /* frosted translucent-sage tiles (like the releases cards) */
+  .card, .fact, .copy-block, .asset, .screen {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(44, 54, 38, 0.05);
   }
 
   /* Quick facts */
@@ -160,7 +171,7 @@
     text-align: center;
   }
   .asset .preview {
-    background: #FFF4DD;
+    background: transparent;
     padding: 24px;
     display: flex;
     align-items: center;
@@ -185,7 +196,7 @@
     margin-bottom: 4px;
   }
   .asset .download {
-    color: var(--accent);
+    color: var(--text);
     font-size: 0.85rem;
   }
 
@@ -210,6 +221,33 @@
     padding: 12px 16px;
     font-size: 0.88rem;
     color: var(--muted);
+  }
+  .tiles-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: -8px 0 18px;
+  }
+  .tiles-head p { margin: 0; color: var(--muted); }
+  .tile-lang-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .tile-lang {
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
   }
 
   /* Contact */
@@ -341,25 +379,18 @@
 <section>
   <h2>Logos & icons</h2>
   <div class="assets">
-    <a class="asset" href="assets/press/mascot_keycap_1024.png" download>
-      <div class="preview"><img src="assets/press/mascot_keycap_1024.png" alt="Main Keycap Logo"></div>
-      <div class="meta">
-        <div class="name">Main Keycap Logo</div>
-        <div class="download">1024×1024 PNG</div>
-      </div>
-    </a>
-    <a class="asset" href="assets/press/icon_with_text_1024.png" download>
-      <div class="preview"><img src="assets/press/icon_with_text_1024.png" alt="Logo with text"></div>
-      <div class="meta">
-        <div class="name">Logo + wordmark</div>
-        <div class="download">1024×1024 PNG</div>
-      </div>
-    </a>
-    <a class="asset" href="assets/press/icon_logo_only_fill_1024.png" download>
-      <div class="preview"><img src="assets/press/icon_logo_only_fill_1024.png" alt="App icon"></div>
+    <a class="asset" href="assets/press/app-icon-v2.png" download>
+      <div class="preview"><img src="assets/press/app-icon-v2.png" alt="App icon"></div>
       <div class="meta">
         <div class="name">App icon</div>
         <div class="download">1024×1024 PNG</div>
+      </div>
+    </a>
+    <a class="asset" href="assets/press/keycap-logo.png" download>
+      <div class="preview"><img src="assets/press/keycap-logo.png" alt="Keycap Logo"></div>
+      <div class="meta">
+        <div class="name">Keycap Logo</div>
+        <div class="download">802×603 PNG</div>
       </div>
     </a>
   </div>
@@ -367,60 +398,84 @@
 
 <section>
   <h2>Promo tiles</h2>
-  <p style="color: var(--muted); margin: -8px 0 18px;">Branded 16:10 hero images for article leads, App Store roundups, and social previews.</p>
-  <div class="screens">
-    <a class="screen" href="assets/press/tiles/promo-01.png" download>
-      <img src="assets/press/tiles/promo-01.png" alt="Cats Lock promo — Lock the keys, love the cat">
-      <div class="meta">01 · Hero · 2880×1800</div>
-    </a>
-    <a class="screen" href="assets/press/tiles/promo-02.png" download>
-      <img src="assets/press/tiles/promo-02.png" alt="Cats Lock promo — standard lock, keep the Mac awake">
-      <div class="meta">02 · Standard lock · 2880×1800</div>
-    </a>
-    <a class="screen" href="assets/press/tiles/promo-03.png" download>
-      <img src="assets/press/tiles/promo-03.png" alt="Cats Lock promo — Stealth Lock">
-      <div class="meta">03 · Stealth Lock · 2880×1800</div>
-    </a>
-    <a class="screen" href="assets/press/tiles/promo-04.png" download>
-      <img src="assets/press/tiles/promo-04.png" alt="Cats Lock promo — lock the built-in keyboard">
-      <div class="meta">04 · Built-in keyboard lock · 2880×1800</div>
-    </a>
-    <a class="screen" href="assets/press/tiles/promo-05.png" download>
-      <img src="assets/press/tiles/promo-05.png" alt="Cats Lock promo — lives in the menu bar">
-      <div class="meta">05 · Lives in the menu bar · 2880×1800</div>
-    </a>
-    <a class="screen" href="assets/press/tiles/promo-06.png" download>
-      <img src="assets/press/tiles/promo-06.png" alt="Cats Lock promo — your lock, your way">
-      <div class="meta">06 · Your lock, your way · 2880×1800</div>
-    </a>
+  <div class="tiles-head">
+    <p>Branded 16:10 hero images for article leads, App Store roundups, and social previews. Available in all seven app languages.</p>
+    <label class="tile-lang-label">Language
+      <select id="tile-lang" class="tile-lang">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="id">Indonesian</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="es">Spanish</option>
+      </select>
+    </label>
   </div>
+  <div class="screens" id="tile-grid">
+    <a class="screen" href="assets/press/promo-tiles/en/1.png" download><img src="assets/press/promo-tiles/en/1.png" alt="Cats Lock promo tile 1"><div class="meta">01 · 2880×1800</div></a>
+    <a class="screen" href="assets/press/promo-tiles/en/2.png" download><img src="assets/press/promo-tiles/en/2.png" alt="Cats Lock promo tile 2"><div class="meta">02 · 2880×1800</div></a>
+    <a class="screen" href="assets/press/promo-tiles/en/3.png" download><img src="assets/press/promo-tiles/en/3.png" alt="Cats Lock promo tile 3"><div class="meta">03 · 2880×1800</div></a>
+    <a class="screen" href="assets/press/promo-tiles/en/4.png" download><img src="assets/press/promo-tiles/en/4.png" alt="Cats Lock promo tile 4"><div class="meta">04 · 2880×1800</div></a>
+    <a class="screen" href="assets/press/promo-tiles/en/5.png" download><img src="assets/press/promo-tiles/en/5.png" alt="Cats Lock promo tile 5"><div class="meta">05 · 2880×1800</div></a>
+    <a class="screen" href="assets/press/promo-tiles/en/6.png" download><img src="assets/press/promo-tiles/en/6.png" alt="Cats Lock promo tile 6"><div class="meta">06 · 2880×1800</div></a>
+    <a class="screen" href="assets/press/promo-tiles/en/7.png" download><img src="assets/press/promo-tiles/en/7.png" alt="Cats Lock promo tile 7"><div class="meta">07 · 2880×1800</div></a>
+  </div>
+  <script>
+    (function(){
+      var sel = document.getElementById('tile-lang');
+      var grid = document.getElementById('tile-grid');
+      sel.addEventListener('change', function(){
+        var lang = sel.value;
+        var links = grid.querySelectorAll('a.screen');
+        for (var i = 0; i < links.length; i++) {
+          var path = 'assets/press/promo-tiles/' + lang + '/' + (i + 1) + '.png';
+          links[i].setAttribute('href', path);
+          links[i].querySelector('img').setAttribute('src', path);
+        }
+      });
+    })();
+  </script>
 </section>
 
 <section>
   <h2>Raw UI screenshots</h2>
-  <p style="color: var(--muted); margin: -8px 0 18px;">Clean window grabs with system chrome. Best for inline article use, annotation, or zooming into specific UI elements.</p>
-  <div class="screens">
-    <a class="screen" href="assets/press/raw/01-hero.png" download>
-      <img src="assets/press/raw/01-hero.png" alt="Cats Lock main window">
-      <div class="meta">01 · Main window · 1064×1088</div>
-    </a>
-    <a class="screen" href="assets/press/raw/02-settings.png" download>
-      <img src="assets/press/raw/02-settings.png" alt="Settings panel">
-      <div class="meta">02 · Settings · 1134×1686</div>
-    </a>
-    <a class="screen" href="assets/press/raw/03-sound.png" download>
-      <img src="assets/press/raw/03-sound.png" alt="Sound picker">
-      <div class="meta">03 · Sound picker · 1064×1088</div>
-    </a>
-    <a class="screen" href="assets/press/raw/04-overlay.png" download>
-      <img src="assets/press/raw/04-overlay.png" alt="Locked overlay full screen">
-      <div class="meta">04 · Locked overlay · 3456×2234</div>
-    </a>
-    <a class="screen" href="assets/press/raw/05-menubar.png" download>
-      <img src="assets/press/raw/05-menubar.png" alt="Menu bar dropdown">
-      <div class="meta">05 · Menu bar · 629×678</div>
-    </a>
+  <div class="tiles-head">
+    <p>Clean window grabs with system chrome. Best for inline article use, annotation, or zooming into specific UI elements. Available in all seven app languages.</p>
+    <label class="tile-lang-label">Language
+      <select id="ss-lang" class="tile-lang">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="id">Indonesian</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="es">Spanish</option>
+      </select>
+    </label>
   </div>
+  <div class="screens" id="ss-grid">
+    <a class="screen" href="assets/press/screenshots/en/home.png" download data-shot="home"><img src="assets/press/screenshots/en/home.png" alt="Cats Lock — Home"><div class="meta">Home · 1464×1128</div></a>
+    <a class="screen" href="assets/press/screenshots/en/smart-detect.png" download data-shot="smart-detect"><img src="assets/press/screenshots/en/smart-detect.png" alt="Cats Lock — Smart Detect"><div class="meta">Smart Detect · 1464×1128</div></a>
+    <a class="screen" href="assets/press/screenshots/en/lock-settings.png" download data-shot="lock-settings"><img src="assets/press/screenshots/en/lock-settings.png" alt="Cats Lock — Lock Settings"><div class="meta">Lock Settings · 1464×1128</div></a>
+    <a class="screen" href="assets/press/screenshots/en/lock-screen.png" download data-shot="lock-screen"><img src="assets/press/screenshots/en/lock-screen.png" alt="Cats Lock — Lock Screen"><div class="meta">Lock Screen · 1464×1128</div></a>
+    <a class="screen" href="assets/press/screenshots/en/sound.png" download data-shot="sound"><img src="assets/press/screenshots/en/sound.png" alt="Cats Lock — Sound"><div class="meta">Sound · 1464×1128</div></a>
+  </div>
+  <script>
+    (function(){
+      var sel = document.getElementById('ss-lang');
+      var grid = document.getElementById('ss-grid');
+      sel.addEventListener('change', function(){
+        var lang = sel.value;
+        var links = grid.querySelectorAll('a.screen');
+        for (var i = 0; i < links.length; i++) {
+          var path = 'assets/press/screenshots/' + lang + '/' + links[i].getAttribute('data-shot') + '.png';
+          links[i].setAttribute('href', path);
+          links[i].querySelector('img').setAttribute('src', path);
+        }
+      });
+    })();
+  </script>
 </section>
 
 <section>
