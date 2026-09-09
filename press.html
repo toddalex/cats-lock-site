@@ -71,6 +71,26 @@
     margin: 0 0 24px;
     max-width: 640px;
   }
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .header-copy {
+    flex: 1;
+  }
+  .header-mascot {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+    display: block;
+    transform: translateY(-96px);
+  }
+  @media (max-width: 640px) {
+    .header-row { flex-direction: column-reverse; align-items: stretch; }
+    .header-mascot { width: 180px; align-self: center; margin-bottom: 8px; transform: none; }
+  }
   .download-pill {
     display: inline-flex;
     align-items: center;
@@ -155,7 +175,9 @@
     line-height: 1.55;
   }
   .copy-block p { margin: 0; }
+  .copy-block p + p { margin-top: 14px; }
   .copy-block + .copy-block { margin-top: 14px; }
+  .coverage a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 
   /* Asset grid */
   .assets {
@@ -221,6 +243,19 @@
     padding: 12px 16px;
     font-size: 0.88rem;
     color: var(--muted);
+  }
+  .screen-mascot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .screen-mascot img {
+    width: 130px;
+    max-width: 60%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 6px 8px rgba(44, 54, 38, 0.18));
   }
   .tiles-head {
     display: flex;
@@ -288,8 +323,13 @@
 
 <header class="header">
   <h1>Press Kit</h1>
-  <p>Everything you need to write about Cats Lock: assets, copy, contacts. For questions or a review build, email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
-  <a class="download-pill" href="assets/press/cats-lock-press-kit.zip" download>⬇ Download all assets (ZIP)</a>
+  <div class="header-row">
+    <div class="header-copy">
+      <p>Everything you need to write about Cats Lock: assets, copy, contacts.<br>For questions or a review build, email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
+      <a class="download-pill" href="assets/press/cats-lock-press-kit.zip" download>⬇ Download all assets (ZIP)</a>
+    </div>
+    <img class="header-mascot" src="assets/mascot/mascot-walking.svg" alt="" aria-hidden="true">
+  </div>
 </header>
 
 <section>
@@ -310,10 +350,6 @@
     <div class="fact">
       <div class="label">Platform</div>
       <div class="value">macOS (Mac App Store)</div>
-    </div>
-    <div class="fact">
-      <div class="label">Requires</div>
-      <div class="value">macOS 13.0 (Ventura) or later</div>
     </div>
     <div class="fact">
       <div class="label">Price</div>
@@ -343,28 +379,28 @@
 
   <h3>Short (50 words)</h3>
   <div class="copy-block">
-    <p>Cats Lock blocks your Mac's keyboard with a customizable global shortcut so your cat can walk on it without derailing your work. New: Smart Detect can lock the keyboard on its own when it senses cat-style typing, an opt-in beta. Stealth Lock stays silent for meetings. $2.99 one-time, sandboxed, no subscriptions.</p>
+    <p>Cats Lock is a Mac app for people who share a desk with a cat. One click locks the keyboard so your cat can walk across it without derailing your work. Smart Detect locks it automatically when it senses cat-style typing; Stealth Lock stays silent for meetings. $2.99 one-time, sandboxed, no subscriptions.</p>
   </div>
 
   <h3>Medium (150 words)</h3>
   <div class="copy-block">
-    <p>Cats Lock is a Mac desktop app for people who share a desk with a cat. A customizable global shortcut (default ⌘L) locks the keyboard from any app, so your cat can settle in for a nap, walk across the keys, or knead the trackpad without sending chaos into your active document. New in version 1.4: Smart Detect can lock the keyboard on its own the moment it senses cat-style typing, so you do not even need the shortcut. It is opt-in, runs entirely on your Mac, and starts as a beta. You can also lock just the laptop's built-in keyboard while you keep typing on an external, and it unlocks automatically when you unplug the external. A friendly overlay and a customizable warning sound mark each blocked keypress; Stealth Lock keeps the lock silent and invisible for meetings. Optional toggles hide the app from the Dock and prevent the Mac from sleeping while locked. Fully sandboxed for the Mac App Store, no account, no analytics, $2.99 one-time. Built by indie developer Todd Alexander for him and his cat to enjoy.</p>
+    <p>Cats Lock is a Mac app for people who share a desk with a cat. One click, or a one-tap widget, locks the keyboard from any app, so your cat can nap or walk across the keys without sending chaos into your active document. Smart Detect goes further, locking the keyboard on its own the moment it senses cat-style typing; it runs entirely on your Mac and never reads what you type. A customizable lock screen and warning sound mark each blocked keypress, while Stealth Lock stays silent for meetings, with the option to unlock the trackpad to take control of a call. You can also lock just your MacBook's built-in keyboard while an external stays live. Version 2.0 brings a full redesign, a new mascot, custom sounds, lock profiles, and localization in seven languages. Sandboxed for the Mac App Store, no account, no analytics, $2.99 one-time. Built by indie developer Todd Alexander for him and his cat to enjoy.</p>
   </div>
 
   <h3>Long (300 words)</h3>
   <div class="copy-block">
-    <p>Cats Lock is a Mac desktop app for people who share a desk with a cat. The interaction is intentionally minimal: one press of a customizable global shortcut (default ⌘L) locks the keyboard from any app, so your cat can stretch out, walk across the keys, or settle in for a nap without sending anything into your active document. A one-tap widget (on macOS 14 and later) can trigger that same lock right from your desktop or Notification Center, without reaching for the shortcut. While locked, a friendly full-screen overlay shows the lock state, and a customizable warning sound plays on each blocked keypress. Useful as an audible cue from the next room when your cat has joined the keyboard while you're away from the desk, or just pure enjoyable and shareable content.</p>
-    <p>Stealth Lock mode swaps that experience for a silent, invisible variant. The keyboard is still blocked, but no overlay appears and no sound plays, which is helpful if you want to lock the keyboard during a meeting, recording, or call without any visual or audio side effect. Unlock always uses the configured shortcut.</p>
-    <p>Version 1.4 introduces Smart Detect, an opt-in beta that watches for cat-style typing, such as several keys held down at once or rapid scattered bursts, and engages your lock on its own so you do not have to reach for the shortcut. It runs entirely on your Mac, reads only the timing and shape of keystrokes rather than anything you type, and never uses Input Monitoring. Every automatic lock includes a one-tap way to say it guessed wrong, which helps the detection improve.</p>
-    <p>Version 1.3 adds an external-keyboard mode for a common setup: a laptop on a desk with a separate keyboard and mouse. Turn on Lock built-in keyboard, and your shortcut locks just the MacBook's own keyboard while the external keeps working, with no overlay and no sound. Add an external mouse and it locks the built-in trackpad too, so a cat on the laptop cannot move the cursor, click, or scroll. It is built for the moment a cat decides the warm laptop is the best seat in the house, letting it settle on the built-in keys while you keep working. The mode appears only when an external keyboard is connected, and the built-in unlocks immediately if that keyboard is unplugged, so you are never locked out of your own Mac.</p>
-    <p>Two optional toggles round out the experience: Hide from Dock turns Cats Lock into a pure menu-bar app with no Dock icon and no Cmd+Tab presence, and Prevent Sleep While Locked holds the display awake so the overlay stays visible if you step away from the desk. Launch at Login is supported through the system service so the menu bar icon is ready when your Mac boots.</p>
-    <p>Cats Lock is built fully within the App Store sandbox, with no analytics SDK, no account creation, and no telemetry. The core lock needs no special permissions; the only features that request Accessibility are the optional function-key lock, the built-in keyboard and trackpad lock, and Smart Detect, all of which stay off unless the user turns them on. It is sold for $2.99 as a one-time purchase with no subscription tier and no upsells. The app launched on the Mac App Store on May 15, 2026.</p>
+    <p>Cats Lock is a Mac app for people who share a desk with a cat. A customizable shortcut (default ⌘L) locks the keyboard from any app, and you can trigger it just as easily from the main window, the menu bar, or a one-tap widget, so your cat can stretch out or walk across the keys without sending anything into your active document. A lock screen and a warning sound mark each blocked keypress, an audible cue from the next room when your cat has joined the keyboard while you are away.</p>
+    <p>Stealth Lock swaps that for a silent, invisible variant: the keyboard is still blocked, but no lock screen or sound appears, useful during a meeting, recording, or screen share. You can even unlock just the trackpad, keeping pointer control to take over a call while the keys stay locked.</p>
+    <p>Smart Detect watches for cat-style typing, such as several keys held at once or rapid scattered bursts, and locks on its own so you never have to reach for the shortcut. It runs entirely on your Mac, reads only the timing and shape of keystrokes rather than anything you type, and offers a one-tap correction whenever it guesses wrong.</p>
+    <p>For external keyboard users, the built-in keyboard lock freezes your MacBook's own keys while an external keeps working, so a cat can sprawl across the warm keys as you keep typing. The full function row locks too, and you choose whether the built-in trackpad locks with it or stays live.</p>
+    <p>Make it yours with customizable lock screens, custom sounds, and lock profiles for different situations, all in an interface localized in seven languages. An optional setting keeps the Mac awake while locked so the lock screen stays visible if you step away.</p>
+    <p>Cats Lock is built fully within the App Store sandbox, with no analytics, no account, and no telemetry. The core lock needs no permissions; only the function-row lock, the built-in keyboard and trackpad lock, and Smart Detect ask for Accessibility, each off until you turn it on. It is a $2.99 one-time purchase, redesigned for version 2.0 and first launched May 15, 2026.</p>
   </div>
 </section>
 
 <section>
   <h2>Selected coverage</h2>
-  <div class="card">
+  <div class="card coverage">
     <ul style="margin: 0; padding-left: 22px;">
       <li style="margin-bottom: 8px;"><a href="https://www.engadget.com/2174922/cats-lock-mac-app-locks-keyboard-to-prevent-chaos-when-your-cat-tramples-all-over-it/" target="_blank" rel="noopener">Engadget</a> — Cats Lock blocks keyboard when your cat tramples all over it</li>
       <li style="margin-bottom: 8px;"><a href="https://www.macrumors.com/2026/05/15/cats-lock-mac-app/" target="_blank" rel="noopener">MacRumors</a> — Cats Lock locks your Mac's keyboard so cats can't type chaos</li>
@@ -399,7 +435,7 @@
 <section>
   <h2>Promo tiles</h2>
   <div class="tiles-head">
-    <p>Branded 16:10 hero images for article leads, App Store roundups, and social previews. Available in all seven app languages.</p>
+    <p>Branded tiles for article leads, App Store roundups, and social previews. Available in all seven app languages.</p>
     <label class="tile-lang-label">Language
       <select id="tile-lang" class="tile-lang">
         <option value="en">English</option>
@@ -460,6 +496,7 @@
     <a class="screen" href="assets/press/screenshots/en/lock-settings.png" download data-shot="lock-settings"><img src="assets/press/screenshots/en/lock-settings.png" alt="Cats Lock — Lock Settings"><div class="meta">Lock Settings · 1464×1128</div></a>
     <a class="screen" href="assets/press/screenshots/en/lock-screen.png" download data-shot="lock-screen"><img src="assets/press/screenshots/en/lock-screen.png" alt="Cats Lock — Lock Screen"><div class="meta">Lock Screen · 1464×1128</div></a>
     <a class="screen" href="assets/press/screenshots/en/sound.png" download data-shot="sound"><img src="assets/press/screenshots/en/sound.png" alt="Cats Lock — Sound"><div class="meta">Sound · 1464×1128</div></a>
+    <div class="screen-mascot"><img src="assets/mascot/mascot-sitting-up.svg" alt="" aria-hidden="true"></div>
   </div>
   <script>
     (function(){
