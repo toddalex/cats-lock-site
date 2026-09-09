@@ -35,9 +35,12 @@
     --border: rgba(0,0,0,0.06);
   }
   * { box-sizing: border-box; }
-  /* Baked-in ~120% zoom: scales the whole page uniformly (type, images, video, spacing)
-     and still reflows to the viewport, exactly like the browser zoom control. */
-  html { scroll-behavior: smooth; zoom: 1.25; }
+  html { scroll-behavior: smooth; }
+  /* Baked-in ~125% zoom on tablet/desktop: scales the whole page uniformly (type, images,
+     video, spacing) and still reflows, like the browser zoom control. NOT applied on phones
+     (<=640px) — there it over-scales and throws off the video's native play button and the
+     absolutely-positioned tease/peek-cat; mobile already fills a small screen at 1x. */
+  @media (min-width: 641px) { html { zoom: 1.25; } }
   body {
     margin: 0;
     font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
@@ -251,17 +254,21 @@
     filter: drop-shadow(0 4px 6px rgba(58, 42, 24, 0.18));
     pointer-events: none;
   }
-  /* Small screens: stack the v2.0 line centered ABOVE the peeking cat */
+  /* Small screens: stack the v2.0 line centered ABOVE the peeking cat, and center the cat
+     (and its paw) over the video instead of sitting at the desktop 1/4 line. */
   @media (max-width: 640px) {
-    .promo-video { margin-top: calc(14vw + 44px); }
+    .promo-video { margin-top: calc(14vw + 72px); }
     .v2-tease {
       right: auto;
       left: 0;
       width: 100%;
       text-align: center;
       margin-bottom: calc(14vw + 12px);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
     }
+    .peek-cat-clip { left: 50%; }
+    .peek-paw { left: 37.3%; }
   }
 
   /* Press pull-quotes — Hand Mirror style: logo, quote, source stacked + centered */
