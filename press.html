@@ -108,6 +108,15 @@
     transform: translateY(-1px);
     opacity: 1;
   }
+  button.download-pill { border: 0; cursor: pointer; font-family: inherit; }
+  .dl-lang {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .dl-lang[hidden] { display: none; }
 
   section {
     max-width: 920px;
@@ -326,7 +335,37 @@
   <div class="header-row">
     <div class="header-copy">
       <p>Everything you need to write about Cats Lock: assets, copy, contacts.<br>For questions or a review build, email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
-      <a class="download-pill" href="assets/press/cats-lock-press-kit.zip" download>⬇ Download all assets (ZIP)</a>
+      <button class="download-pill" id="dl-pill" type="button" aria-expanded="false" aria-controls="dl-lang">⬇ Download all assets (ZIP)</button>
+      <div class="dl-lang" id="dl-lang" hidden>
+        <label class="tile-lang-label">Language
+          <select id="dl-lang-select" class="tile-lang">
+            <option value="en" selected>English</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="id">Indonesian</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="es">Spanish</option>
+          </select>
+        </label>
+        <a class="download-pill" id="dl-go" href="assets/press/cats-lock-press-kit-en.zip" download>⬇ Download</a>
+      </div>
+      <script>
+        (function(){
+          var pill = document.getElementById('dl-pill');
+          var panel = document.getElementById('dl-lang');
+          var sel = document.getElementById('dl-lang-select');
+          var go = document.getElementById('dl-go');
+          pill.addEventListener('click', function(){
+            var show = panel.hasAttribute('hidden');
+            if (show) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
+            pill.setAttribute('aria-expanded', show ? 'true' : 'false');
+          });
+          sel.addEventListener('change', function(){
+            go.setAttribute('href', 'assets/press/cats-lock-press-kit-' + sel.value + '.zip');
+          });
+        })();
+      </script>
     </div>
     <img class="header-mascot" src="assets/mascot/mascot-walking.svg" alt="" aria-hidden="true">
   </div>
@@ -477,7 +516,7 @@
 <section>
   <h2>Raw UI screenshots</h2>
   <div class="tiles-head">
-    <p>Clean window grabs with system chrome. Best for inline article use, annotation, or zooming into specific UI elements. Available in all seven app languages.</p>
+    <p>Clean grabs of the app window on a transparent background. Best for inline article use, annotation, or zooming into specific UI elements. Available in all seven app languages.</p>
     <label class="tile-lang-label">Language
       <select id="ss-lang" class="tile-lang">
         <option value="en">English</option>
@@ -546,7 +585,7 @@
 <section>
   <h2>Developer</h2>
   <div class="card">
-    <p style="margin: 0 0 8px;"><strong>Todd Alexander</strong> is a Senior Software Engineer at Paramount and independent Mac developer based in Los Angeles. Cats Lock is his first solo Mac App Store release.</p>
+    <p style="margin: 0 0 8px;"><strong>Todd Alexander</strong> is a Lead Software Engineer at Paramount and indie Mac developer based in Los Angeles. Cats Lock is his first solo Mac App Store release. Tucker is his cat and quality assurance supervisor.</p>
     <p style="margin: 0; color: var(--muted);">LinkedIn: <a href="https://www.linkedin.com/in/toddalex/" target="_blank" rel="noopener">linkedin.com/in/toddalex</a></p>
   </div>
 </section>
