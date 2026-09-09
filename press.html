@@ -108,7 +108,6 @@
     transform: translateY(-1px);
     opacity: 1;
   }
-  button.download-pill { border: 0; cursor: pointer; font-family: inherit; }
   .dl-lang {
     display: flex;
     align-items: center;
@@ -116,7 +115,6 @@
     margin-top: 14px;
     flex-wrap: wrap;
   }
-  .dl-lang[hidden] { display: none; }
 
   section {
     max-width: 920px;
@@ -335,8 +333,7 @@
   <div class="header-row">
     <div class="header-copy">
       <p>Everything you need to write about Cats Lock: assets, copy, contacts.<br>For questions or a review build, email <a href="mailto:meow@catslock.app">meow@catslock.app</a>.</p>
-      <button class="download-pill" id="dl-pill" type="button" aria-expanded="false" aria-controls="dl-lang">⬇ Download all assets (ZIP)</button>
-      <div class="dl-lang" id="dl-lang" hidden>
+      <div class="dl-lang">
         <label class="tile-lang-label">Language
           <select id="dl-lang-select" class="tile-lang">
             <option value="en" selected>English</option>
@@ -348,19 +345,12 @@
             <option value="es">Spanish</option>
           </select>
         </label>
-        <a class="download-pill" id="dl-go" href="assets/press/cats-lock-press-kit-en.zip" download>⬇ Download</a>
+        <a class="download-pill" id="dl-go" href="assets/press/cats-lock-press-kit-en.zip" download>⬇ Download all assets (ZIP)</a>
       </div>
       <script>
         (function(){
-          var pill = document.getElementById('dl-pill');
-          var panel = document.getElementById('dl-lang');
           var sel = document.getElementById('dl-lang-select');
           var go = document.getElementById('dl-go');
-          pill.addEventListener('click', function(){
-            var show = panel.hasAttribute('hidden');
-            if (show) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
-            pill.setAttribute('aria-expanded', show ? 'true' : 'false');
-          });
           sel.addEventListener('change', function(){
             go.setAttribute('href', 'assets/press/cats-lock-press-kit-' + sel.value + '.zip');
           });
