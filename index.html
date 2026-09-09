@@ -35,7 +35,9 @@
     --border: rgba(0,0,0,0.06);
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  /* Baked-in ~120% zoom: scales the whole page uniformly (type, images, video, spacing)
+     and still reflows to the viewport, exactly like the browser zoom control. */
+  html { scroll-behavior: smooth; zoom: 1.25; }
   body {
     margin: 0;
     font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
