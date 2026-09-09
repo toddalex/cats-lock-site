@@ -10,6 +10,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&display=swap" rel="stylesheet">
 
 <meta property="og:title" content="Cats Lock — Release notes">
 <meta property="og:description" content="What's new in Cats Lock.">
@@ -19,23 +22,26 @@
 
 <style>
   :root {
-    --bg: #FEF8EF;
     --card: #FFFDF7;
     --accent: #E8A838;
-    --text: #2E2A26;
-    --muted: #6B655F;
-    --border: rgba(0,0,0,0.06);
+    --text: #35281A;
+    --muted: rgba(53, 40, 26, 0.62);
+    --border: rgba(53, 40, 26, 0.10);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
     color: var(--text);
-    background: var(--bg);
+    background: linear-gradient(158deg, #D9BBB4 0%, #C1978D 100%) fixed;
+    min-height: 100vh;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  h1, h2, h3 {
+    font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  a { color: var(--text); text-decoration: none; transition: opacity 0.15s ease; }
+  a:hover { opacity: 0.6; }
 
   .nav {
     max-width: 920px;
@@ -46,7 +52,6 @@
     gap: 12px;
   }
   .nav a.home {
-    color: var(--muted);
     font-size: 0.95rem;
   }
 
@@ -64,7 +69,6 @@
   .header p {
     color: var(--muted);
     margin: 0 0 8px;
-    max-width: 640px;
   }
 
   section {
@@ -74,11 +78,14 @@
   }
 
   .release {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: rgba(255, 249, 245, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.38);
     border-radius: 18px;
     padding: 28px 28px 20px;
     margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(53, 40, 26, 0.06);
   }
   .release h2 {
     font-size: 1.5rem;
@@ -121,12 +128,7 @@
     font-size: 0.88rem;
     color: var(--muted);
   }
-  .release .gh-link a {
-    color: var(--muted);
-  }
-  .release .gh-link a:hover {
-    color: var(--accent);
-  }
+  .release .gh-link a { color: var(--muted); }
 
   footer {
     max-width: 920px;
@@ -138,7 +140,7 @@
     margin-top: 32px;
     text-align: center;
   }
-  footer a { color: var(--accent); }
+  footer a { color: var(--text); }
 
   @media (max-width: 600px) {
     .header h1 { font-size: 1.9rem; }
@@ -164,11 +166,11 @@
     <h2>v1.6.1</h2>
     <div class="meta">September 7, 2026</div>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
       <li><strong>No Dock icon flash.</strong> With Hide from Dock on, locking no longer briefly shows a Dock icon.</li>
-      <li><strong>Window stays in front.</strong> The app window no longer occasionally drops behind other windows when you turn Hide from Dock on or off.</li>
-      <li><strong>Smoother widget launch.</strong> Tapping the one-tap widget no longer flashes the app window or a Dock icon.</li>
+      <li><strong>Window stays in front.</strong> The app window no longer drops behind others when you toggle Hide from Dock.</li>
+      <li><strong>Smoother widget launch.</strong> Tapping the widget no longer flashes the window or a Dock icon.</li>
     </ul>
   </article>
 
@@ -178,7 +180,7 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>One-tap widget.</strong> Add the Cats Lock widget to your desktop or Notification Center and lock the keyboard with a single click, using your current settings. It opens Cats Lock for you if it isn't running, and a small light glows while the keys are locked. Requires macOS 14 or later.</li>
+      <li><strong>One-tap widget.</strong> Lock or unlock from your desktop or Notification Center with a single tap, using your current settings. Requires macOS 14 or later.</li>
     </ul>
   </article>
 
@@ -188,7 +190,7 @@
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Now available on macOS Ventura.</strong> Cats Lock used to require Sonoma (14.0); it now runs on macOS Ventura (13.0) and later, so more Macs can keep their keys safe from curious paws.</li>
+      <li><strong>Now available on macOS Ventura.</strong> Cats Lock now runs on Ventura (13.0) and later, not just Sonoma, so more Macs can join in.</li>
     </ul>
   </article>
 
@@ -198,13 +200,12 @@
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Fewer false locks from an accidental brush of keys.</strong> Briefly bumping a few neighboring keys, or fast typing, no longer sets off a lock. A paw that settles on the keys still locks.</li>
-      <li><strong>Smarter handling of held keys.</strong> With "Ignore single-key holds" on, deliberately holding one key stays ignored, but a paw resting on two keys at once is still caught.</li>
+      <li><strong>Fewer false locks.</strong> An accidental brush of keys or fast typing is less likely to set off a lock, while a paw on the keys still locks.</li>
     </ul>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>No more repeated re-locks.</strong> After Smart Detect engaged a lock it could keep re-triggering; it now pauses while locked and resumes when you unlock.</li>
+      <li><strong>No repeated re-locks.</strong> Smart Detect no longer keeps re-triggering after it locks.</li>
     </ul>
   </article>
 
@@ -214,7 +215,7 @@
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Smart Detect fine-tuning.</strong> Sharpened how Smart Detect tells your typing from your cat's around arrow keys and keyboard shortcuts, so normal use of both is less likely to set off a false lock. A cat on the keyboard is still caught.</li>
+      <li><strong>Smart Detect fine-tuning.</strong> Fewer false locks during normal use, while a cat on the keyboard is still caught.</li>
     </ul>
   </article>
 
@@ -224,13 +225,13 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>On-screen lock badge.</strong> When you use Stealth Lock or lock just your built-in keyboard, there is no full-screen overlay, so it was easy to forget the keyboard was locked. A small dismissible badge now appears in the corner with the unlock shortcut and a one-tap Unlock button, so you always know it is locked and how to get out. Handy when Smart Detect locks for you. <span class="credit">Requested by Richard.</span></li>
-      <li><strong>Lock or free the trackpad from the badge.</strong> During a built-in keyboard lock, the badge has a one-tap button to lock or free the built-in trackpad when an external mouse is connected.</li>
+      <li><strong>On-screen lock badge.</strong> A small badge shows the unlock shortcut and a one-tap Unlock during Stealth Lock and the built-in keyboard lock, so a quiet lock is never a mystery. <span class="credit">Thanks to Richard for the request.</span></li>
+      <li><strong>Lock or free the trackpad.</strong> A one-tap button on the badge to lock or free the built-in trackpad.</li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Simpler Stealth Lock.</strong> The first-run confirmation dialog is gone. The always-present badge now shows what is happening and how to unlock while stealth is active.</li>
+      <li><strong>Simpler Stealth Lock.</strong> The first-run dialog is gone; the badge now shows what's happening.</li>
     </ul>
   </article>
 
@@ -240,8 +241,8 @@
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Smart Detect now catches cats that rest or gently walk on the keyboard.</strong> When a cat settles in and rests a paw on the keys, or gently pads across them, it holds keys down in a way earlier versions could let slip. Smart Detect now recognizes that resting, gentle-walk pattern and locks for it, while still leaving your own fast typing alone.</li>
-      <li><strong>Clearer "That wasn't my cat" button.</strong> The button shown on each Smart Detect auto-lock, for the rare times it guesses wrong, is now easier to spot and tap.</li>
+      <li><strong>Better at catching resting cats.</strong> Smart Detect now catches a cat that rests or gently walks on the keys, while leaving your fast typing alone.</li>
+      <li><strong>Clearer "That wasn't my cat" button.</strong> Easier to spot and tap on an auto-lock.</li>
     </ul>
   </article>
 
@@ -251,13 +252,13 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Five Smart Detect sensitivity levels.</strong> The sensitivity slider now has five stops instead of three, including a gentler low setting, so you can dial in how eager Smart Detect is more precisely.</li>
-      <li><strong>Ignore single-key holds.</strong> A new Smart Detect option that stops auto-locking when you hold or repeat a single key, like drawing a divider of dashes or dots. <span class="credit">Thanks to Saahir for the suggestion.</span></li>
+      <li><strong>Five sensitivity levels.</strong> The Smart Detect slider now has five stops instead of three, including a gentler low setting.</li>
+      <li><strong>Ignore single-key holds.</strong> A new option that stops auto-locking when you hold or repeat a single key. <span class="credit">Thanks to Saahir for the suggestion.</span></li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Far fewer false locks while typing.</strong> Smart Detect no longer mistakes fast typing for a cat, and holding a single key (erasing a paragraph, or making a line of dashes) no longer trips it as easily. <span class="credit">Thanks to Saahir and Juan for the reports.</span></li>
+      <li><strong>Fewer false locks while typing.</strong> Smart Detect is better at telling fast typing from a cat. <span class="credit">Thanks to Saahir and Juan for the reports.</span></li>
     </ul>
   </article>
 
@@ -265,15 +266,15 @@
     <h2>v1.4.2</h2>
     <div class="meta">July 8, 2026</div>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>The lock now fully blocks app switching, even when hidden from the Dock.</strong> If you ran Cats Lock as a pure menu bar app (Hide from Dock on), Cmd-Tab could still slip through while locked. It is now reliably blocked in every mode.</li>
-      <li><strong>The main window opens reliably, and in front.</strong> Opening Cats Lock from the menu bar, at launch, or with Hide from Dock on could leave the window hidden behind other apps or unfocused. It now comes to the front and takes focus every time.</li>
+      <li><strong>App switching stays blocked.</strong> Cmd-Tab no longer slips through while locked, even with Hide from Dock on.</li>
+      <li><strong>The main window opens reliably, and in front.</strong> It now comes to the front and takes focus every time.</li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Smart Detect got a little sharper.</strong> Keys people hold for emphasis (like ! and ?) now keep their longer grace period only when held on their own, so a paw mashing them alongside other keys is caught sooner.</li>
+      <li><strong>Sharper cat detection.</strong> Smart Detect catches a paw sooner.</li>
     </ul>
   </article>
 
@@ -283,12 +284,12 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Smart Detect is one click from the menu bar.</strong> The menu bar dropdown now has a Smart Detect row that opens straight to it in Settings, so you can find and reach it without opening the main window.</li>
+      <li><strong>Smart Detect in the menu bar.</strong> Reach it in one click from the menu bar dropdown.</li>
     </ul>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>Locking now clears Mission Control first.</strong> Locking while Mission Control was open used to leave the lock screen stranded behind it. Cats Lock now dismisses Mission Control before it locks, so the lock screen appears and your unlock shortcut works as expected.</li>
+      <li><strong>Locking clears Mission Control first.</strong> The lock screen no longer gets stranded behind Mission Control.</li>
     </ul>
   </article>
 
@@ -298,12 +299,12 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Smart Detect (beta).</strong> Cats Lock can now lock itself the moment it senses cat-style typing, like several keys held down at once or rapid scattered bursts, so you do not have to reach for the shortcut when a paw lands on the keys. It is opt-in and off by default, runs entirely on your Mac, and never sends your keystrokes anywhere. Choose how sensitive it is, and if it ever guesses wrong, one tap on "That wasn't my cat" unlocks and helps it improve. <span class="credit">Thanks to Danielle for pointing us to the research behind it.</span></li>
+      <li><strong>Smart Detect (beta).</strong> Cats Lock can lock itself when it senses cat-style typing, so you don't reach for the shortcut. Opt-in, off by default, and fully on-device, so your keystrokes never leave your Mac. <span class="credit">Thanks to Danielle for the suggestion.</span></li>
     </ul>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>The lock now covers full-screen apps.</strong> Locking while another app was in full screen could leave you without the visible overlay until you pressed the unlock shortcut. The overlay now appears correctly over full-screen apps.</li>
+      <li><strong>The lock now covers full-screen apps.</strong> The overlay appears correctly over apps in full screen.</li>
     </ul>
   </article>
 
@@ -313,13 +314,13 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Lock the built-in trackpad too.</strong> The built-in keyboard lock now has an Also lock trackpad option. When an external mouse is connected, locking the built-in keyboard also blocks the laptop's trackpad, so a cat on the MacBook cannot move the cursor, click, or scroll while you keep working on your external keyboard and mouse. It frees the trackpad the moment the external pointer is unplugged, and uses the same opt-in Accessibility permission as the keyboard lock.</li>
-      <li><strong>Caps Lock protection.</strong> A stray Caps Lock press during a lock can no longer leave you stuck typing in capitals.</li>
+      <li><strong>Lock the built-in trackpad too.</strong> The built-in keyboard lock can also block the laptop's trackpad, so a cat on the MacBook can't move the cursor while you work on your external.</li>
+      <li><strong>Caps Lock protection.</strong> A stray Caps Lock press during a lock no longer leaves you stuck in capitals.</li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Hide from Dock is reliable across launch and reopen.</strong> With it on, Cats Lock now stays out of the Dock when launched or reopened, not just on the first toggle.</li>
+      <li><strong>Hide from Dock is reliable across launch and reopen.</strong></li>
     </ul>
   </article>
 
@@ -329,12 +330,12 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Lock just the built-in keyboard.</strong> For people who work on an external keyboard: turn on Lock built-in keyboard only, then lock with your shortcut and only the laptop's built-in keys are blocked while your external keyboard keeps working, with no overlay and no sound. The built-in unlocks the moment you disconnect the external, so you are never stranded. The mode appears only when an external keyboard is connected, and it uses Accessibility permission (the same opt-in as Lock Function Row). <span class="credit">Thanks to Steffen for the request.</span></li>
+      <li><strong>Lock just the built-in keyboard.</strong> Work on an external keyboard? Lock only your MacBook's built-in keys while the external keeps working. <span class="credit">Thanks to Steffen for the request.</span></li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>New app icon.</strong> A cleaner orange cat on a warm soft-sand background, with proper Dark and Tinted variants.</li>
+      <li><strong>New app icon.</strong> A cleaner orange cat on a warm sand background, with Dark and Tinted variants.</li>
     </ul>
   </article>
 
@@ -344,15 +345,15 @@
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Cmd+Tab no longer escapes the lock.</strong> While locked, Cats Lock now blocks the app switcher so a determined cat can't jump into another app. No extra permissions needed.</li>
-      <li><strong>Always a way out of Stealth Lock.</strong> Press Esc anytime while locked and Cats Lock shows you the unlock shortcut right on screen, even in Stealth Lock where there's no overlay.</li>
-      <li><strong>Smoother, quieter sound.</strong> The audio engine was rebuilt so warning sounds play more reliably and cleanly.</li>
+      <li><strong>Cmd+Tab no longer escapes the lock.</strong> The app switcher stays blocked while locked.</li>
+      <li><strong>Always a way out of Stealth Lock.</strong> Press Esc while locked to see the unlock shortcut on screen.</li>
+      <li><strong>Smoother, quieter sound.</strong> Warning sounds play more reliably and cleanly.</li>
     </ul>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>Hide from Dock works reliably again.</strong> Toggling Hide from Dock no longer leaves a lingering Dock icon behind or sends the main window behind other windows.</li>
-      <li><strong>Function-key locking prompts for permission correctly.</strong> Turning on Lock function keys now reliably brings up the Accessibility permission prompt so you can enable the feature.</li>
+      <li><strong>Hide from Dock works reliably again.</strong></li>
+      <li><strong>Function-key locking prompts for permission correctly.</strong></li>
     </ul>
   </article>
 
@@ -362,18 +363,18 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Lock the function row (optional).</strong> A new opt-in toggle in Settings blocks the entire function row while locked (F1 through F12), including Mission Control, Spotlight, brightness, keyboard backlight, and the media keys. Because macOS treats these as system keys, this feature asks for Accessibility permission once, and it stays off until you turn it on. Everything else in Cats Lock still works with no permissions at all.</li>
-      <li><strong>Menu bar icon picker.</strong> Choose how Cats Lock looks in your menu bar from three brand-matching styles: Paw, Cat, and Cat Head. Each has a locked variant so the lock state reads clearly at menu bar size. <span class="credit">Thanks to Agnes (and Felix) for the request.</span></li>
+      <li><strong>Lock the function row (optional).</strong> An opt-in toggle blocks the full function row while locked (F1 to F12), including brightness, volume, and media keys.</li>
+      <li><strong>Menu bar icon picker.</strong> Choose from three brand-matching menu bar styles. <span class="credit">Thanks to Agnes (and Felix) for the request.</span></li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Prevent sleep while locked</strong> can now be toggled straight from the menu bar dropdown, no need to open Settings.</li>
+      <li><strong>Prevent sleep while locked</strong> is now toggleable from the menu bar.</li>
     </ul>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>Caps Lock no longer triggers the warning sound</strong> at the moment you lock in.</li>
+      <li><strong>Caps Lock no longer triggers the warning sound</strong> as you lock in.</li>
     </ul>
   </article>
 
@@ -383,12 +384,12 @@
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>Refreshed app icon.</strong> Bigger, cleaner cat silhouette filling more of the canvas, with proper Dark and Tinted appearance variants for users on the latest macOS.</li>
+      <li><strong>Refreshed app icon.</strong> A bigger, cleaner cat silhouette, with Dark and Tinted variants.</li>
     </ul>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>Siri voice command compatibility.</strong> Saying "Hey Siri, Toggle Cats Lock" (or "Enable" / "Disable") now matches our registered actions correctly. The previous issue was a name mismatch between how Siri canonicalizes spoken app names and how our shortcut phrases were registered. If you've added Cats Lock actions to Shortcuts.app, voice commands should work right after updating. If you haven't, adding them once in Shortcuts.app gets voice working.</li>
+      <li><strong>Siri voice commands.</strong> "Hey Siri, Toggle Cats Lock" (and Enable / Disable) now trigger reliably.</li>
     </ul>
   </article>
 
@@ -396,14 +397,14 @@
     <h2>v1.1.1</h2>
     <div class="meta">May 20, 2026</div>
 
-    <h3>Bug fixes</h3>
+    <h3>Fixes</h3>
     <ul>
-      <li><strong>Shortcut label now shows the correct key on non-US keyboard layouts.</strong> German, French, Dvorak, and other layouts were showing "Key 30" or "Key 44" instead of the actual character. The lock itself always worked; only the displayed label was wrong. <span class="credit">Thanks to Agnes (and Felix) for the detailed report.</span></li>
+      <li><strong>Correct shortcut label on non-US layouts.</strong> Non-US keyboard layouts now show the right key in the shortcut label. <span class="credit">Thanks to Agnes (and Felix) for the report.</span></li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li><strong>macOS Sequoia icon variants.</strong> Added dark and tinted appearance variants so Cats Lock fits in cleanly when Sequoia users set Icon and widget style to Dark or Tinted. Light variant unchanged. <span class="credit">Thanks to Stephen for flagging this.</span></li>
+      <li><strong>Dark and Tinted icon variants</strong> for the latest macOS. <span class="credit">Thanks to Stephen for flagging this.</span></li>
     </ul>
   </article>
 
@@ -413,28 +414,18 @@
 
     <h3>New</h3>
     <ul>
-      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app on the system. No need to bring Cats Lock to the foreground first. <span class="credit">Thanks to Richard for the request.</span></li>
-      <li><strong>Customizable shortcut.</strong> Record your own combo in Settings. The same shortcut drives both the global hotkey and the in-process unlock.</li>
-      <li><strong>Hide from Dock.</strong> Optional menu-bar-only mode. No Dock icon, no Cmd+Tab presence. The menu bar icon and the main window stay accessible. <span class="credit">Thanks to Bruce for the request.</span></li>
-      <li><strong>Prevent sleep while locked.</strong> Holds the display awake while the keyboard is locked so the overlay stays visible if you step away.</li>
+      <li><strong>Global lock shortcut.</strong> The unlock shortcut now fires from any app. <span class="credit">Thanks to Richard for the request.</span></li>
+      <li><strong>Customizable shortcut.</strong> Record your own combo in Settings.</li>
+      <li><strong>Hide from Dock.</strong> An optional menu-bar-only mode with no Dock icon. <span class="credit">Thanks to Bruce for the request.</span></li>
+      <li><strong>Prevent sleep while locked.</strong> Keeps the display awake so the overlay stays visible if you step away.</li>
     </ul>
 
     <h3>Improvements</h3>
     <ul>
-      <li>First-time Stealth Lock now shows a quick confirmation so you know what to expect. Subsequent toggles apply silently.</li>
-      <li>Caps Lock no longer blocks unlock.</li>
-      <li>The warning sound stays quiet while you hold the unlock combo's modifier keys.</li>
-      <li>Launch at Login now boots quietly into the menu bar instead of opening the main window on every login.</li>
-      <li>Onboarding updated to introduce Stealth Lock, the unified unlock shortcut, and sleep prevention.</li>
+      <li><strong>First-run Stealth Lock</strong> shows a quick confirmation so you know what to expect.</li>
+      <li><strong>Caps Lock no longer blocks unlock.</strong></li>
+      <li><strong>Launch at Login</strong> boots quietly into the menu bar.</li>
     </ul>
-
-    <h3>Under the hood</h3>
-    <ul>
-      <li>Main window rebuilt on AppKit so it can pull cleanly to the foreground in menu-bar-only mode.</li>
-      <li>Hardened Runtime enabled.</li>
-      <li>No new entitlements. Still fully sandboxed. Still no Accessibility prompt.</li>
-    </ul>
-
   </article>
 
   <article class="release">
@@ -443,12 +434,12 @@
 
     <h3>New</h3>
     <ul>
-      <li>Initial public release on the Mac App Store.</li>
-      <li>Lock the keyboard with ⌘L from the main window or the menu bar.</li>
-      <li>Friendly overlay while locked, with customizable warning sound on each blocked keypress.</li>
-      <li>Stealth Lock mode for silent, invisible locking during meetings or recordings.</li>
-      <li>Launch at Login support.</li>
-      <li>Fully sandboxed. No Accessibility prompt. No account. No analytics.</li>
+      <li>Initial release on the Mac App Store.</li>
+      <li>Lock the keyboard with &#8984;L from the window or the menu bar.</li>
+      <li>A friendly overlay with a customizable warning sound on each blocked key.</li>
+      <li>Stealth Lock for silent, invisible locking during meetings.</li>
+      <li>Launch at Login.</li>
+      <li>Fully sandboxed. No account, no analytics.</li>
     </ul>
   </article>
 
