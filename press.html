@@ -292,11 +292,24 @@
     font-family: inherit;
     font-size: 0.92rem;
     color: var(--text);
-    background: var(--card);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--card);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 11px;
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 8px 12px;
+    padding: 8px 30px 8px 12px;
     cursor: pointer;
+  }
+  .tile-lang:focus { outline: none; }
+  .tile-lang:focus-visible {
+    outline: none;
+    border-color: var(--text);
+    box-shadow: 0 0 0 3px rgba(44, 54, 38, 0.22);
   }
 
   /* Contact */
@@ -430,7 +443,7 @@
     <p>Smart Detect watches for cat-style typing, such as several keys held at once or rapid scattered bursts, and locks on its own so you never have to reach for the shortcut. It runs entirely on your Mac, reads only the timing and shape of keystrokes rather than anything you type.</p>
     <p>For external keyboard users, the built-in keyboard lock freezes your MacBook's own keys while an external keeps working, so a cat can sprawl across the warm keys as you keep typing. The full function row locks too, and you choose whether the built-in trackpad locks with it or stays live.</p>
     <p>Make it yours with customizable lock screens, custom sounds, and lock profiles for different situations, all in an interface localized in seven languages. An optional setting keeps the Mac awake while locked so the lock screen stays visible if you step away.</p>
-    <p>Cats Lock is built fully within the App Store sandbox, with no analytics, no account, and no telemetry. The core lock needs no permissions; only the function-row lock, the built-in keyboard and trackpad lock, and Smart Detect ask for Accessibility, each off until you turn it on. It is a $4.99 one-time purchase, redesigned for version 2.0 and first launched May 15, 2026.</p>
+    <p>Cats Lock collects no data. It is built fully within the App Store sandbox, with no analytics, no account, and no telemetry. The core lock needs no permissions; only the function-row lock, the built-in keyboard and trackpad lock, and Smart Detect ask for Accessibility, each off until you turn it on. It is a $4.99 one-time purchase, redesigned for version 2.0 and first launched May 15, 2026.</p>
   </div>
 </section>
 
