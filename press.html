@@ -17,9 +17,13 @@
 
 <meta property="og:title" content="Cats Lock — Press Kit">
 <meta property="og:description" content="Press kit, screenshots, and brand assets for Cats Lock.">
-<meta property="og:image" content="https://catslock.app/assets/logo/mascot-keycap.png">
+<meta property="og:image" content="https://catslock.app/assets/social/og-cats-lock-v2.png">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1000">
 <meta property="og:url" content="https://catslock.app/press">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://catslock.app/assets/social/og-cats-lock-v2.png">
 
 <style>
   :root {
@@ -288,11 +292,24 @@
     font-family: inherit;
     font-size: 0.92rem;
     color: var(--text);
-    background: var(--card);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--card);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 11px;
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 8px 12px;
+    padding: 8px 30px 8px 12px;
     cursor: pointer;
+  }
+  .tile-lang:focus { outline: none; }
+  .tile-lang:focus-visible {
+    outline: none;
+    border-color: var(--text);
+    box-shadow: 0 0 0 3px rgba(44, 54, 38, 0.22);
   }
 
   /* Contact */
@@ -423,10 +440,10 @@
   <div class="copy-block">
     <p>Cats Lock is a Mac app for people who share a desk with a cat. A customizable shortcut (default ⌘L) locks the keyboard from any app, and you can trigger it just as easily from the main window, the menu bar, or a one-tap widget, so your cat can stretch out or walk across the keys without sending anything into your active document. A lock screen and a warning sound mark each blocked keypress, an audible cue from the next room when your cat has joined the keyboard while you are away.</p>
     <p>Stealth Lock swaps that for a silent, invisible variant: the keyboard is still blocked, but no lock screen or sound appears, useful during a meeting, recording, or screen share. You can even unlock just the trackpad, keeping pointer control to take over a call while the keys stay locked.</p>
-    <p>Smart Detect watches for cat-style typing, such as several keys held at once or rapid scattered bursts, and locks on its own so you never have to reach for the shortcut. It runs entirely on your Mac, reads only the timing and shape of keystrokes rather than anything you type, and offers a one-tap correction whenever it guesses wrong.</p>
+    <p>Smart Detect watches for cat-style typing, such as several keys held at once or rapid scattered bursts, and locks on its own so you never have to reach for the shortcut. It runs entirely on your Mac, reads only the timing and shape of keystrokes rather than anything you type.</p>
     <p>For external keyboard users, the built-in keyboard lock freezes your MacBook's own keys while an external keeps working, so a cat can sprawl across the warm keys as you keep typing. The full function row locks too, and you choose whether the built-in trackpad locks with it or stays live.</p>
     <p>Make it yours with customizable lock screens, custom sounds, and lock profiles for different situations, all in an interface localized in seven languages. An optional setting keeps the Mac awake while locked so the lock screen stays visible if you step away.</p>
-    <p>Cats Lock is built fully within the App Store sandbox, with no analytics, no account, and no telemetry. The core lock needs no permissions; only the function-row lock, the built-in keyboard and trackpad lock, and Smart Detect ask for Accessibility, each off until you turn it on. It is a $4.99 one-time purchase, redesigned for version 2.0 and first launched May 15, 2026.</p>
+    <p>Cats Lock collects no data. It is built fully within the App Store sandbox, with no analytics, no account, and no telemetry. The core lock needs no permissions; only the function-row lock, the built-in keyboard and trackpad lock, and Smart Detect ask for Accessibility, each off until you turn it on. It is a $4.99 one-time purchase, redesigned for version 2.0 and first launched May 15, 2026.</p>
   </div>
 </section>
 
@@ -580,7 +597,7 @@
   <h2>Developer</h2>
   <div class="card">
     <p style="margin: 0 0 8px;"><strong>Todd Alexander</strong> is a Lead Software Engineer at Paramount and indie Mac developer based in Los Angeles. Cats Lock is his first solo Mac App Store release. Tucker is his cat and quality assurance supervisor.</p>
-    <p style="margin: 0; color: var(--muted);">LinkedIn: <a href="https://www.linkedin.com/in/toddalex/" target="_blank" rel="noopener">linkedin.com/in/toddalex</a></p>
+    <p style="margin: 0; color: var(--muted);">Website: <a href="https://toddalexander.me" target="_blank" rel="noopener">toddalexander.me</a></p>
   </div>
 </section>
 
@@ -598,6 +615,7 @@
 <footer>
   <div><a href="/privacy.html">Privacy Policy</a> · <a href="/releases.html">Releases</a></div>
   <div style="margin-top: 6px;"><a href="mailto:meow@catslock.app">meow@catslock.app</a> · © 2026 Cats Lock&trade;</div>
+  <div style="margin-top: 6px;">Made by <a href="https://toddalexander.me" target="_blank" rel="noopener">Todd Alexander</a></div>
   <div style="margin-top: 12px;"><a href="/">← catslock.app</a></div>
 </footer>
 
