@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, noai, noimageai">
+<title>Page not found — Cats Lock</title>
+
+<!-- Absolute paths: this page is served for ANY missing URL, at any depth. -->
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --text: #35281A;
+    --muted: rgba(53, 40, 26, 0.62);
+  }
+  * { box-sizing: border-box; }
+  /* Baked-in ~125% zoom on tablet/desktop only; phones (<=640px) render at 1x. */
+  @media (min-width: 641px) { html { zoom: 1.25; } }
+  body {
+    margin: 0;
+    min-width: 400px;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    color: var(--text);
+    background: linear-gradient(158deg, #D9BBB4 0%, #C1978D 100%) fixed;   /* taupe, as the releases page */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: var(--text); text-decoration: none; transition: opacity 0.15s ease; }
+  a:hover { opacity: 0.6; }
+
+  .nav {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+    font-size: 0.95rem;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px 72px;
+  }
+  main img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 10px 14px rgba(53, 40, 26, 0.22));
+  }
+  h1 {
+    font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 8px;
+  }
+  main p {
+    color: var(--muted);
+    margin: 0 0 24px;
+  }
+  .home-button {
+    display: inline-block;
+    font-family: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: var(--text);
+    color: #FFFDF7;
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="/">← catslock.app</a>
+</div>
+
+<main>
+  <img src="/assets/mascot/mascot-sitting-up.png" alt="The Cats Lock cat, sitting up">
+  <h1>Page not found</h1>
+  <p>This page must have wandered off.</p>
+  <a class="home-button" href="/">Back to catslock.app</a>
+</main>
+
+</body>
+</html>
