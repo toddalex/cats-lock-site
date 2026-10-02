@@ -305,14 +305,24 @@
   }
 
   /* Press pull-quotes — Hand Mirror style: logo, quote, source stacked + centered */
+  /* Diamond: Engadget left, Digital Trends top-middle, UFD Tech bottom-middle, 9to5Mac right.
+     The side quotes span both rows and sit vertically centered between the two middle ones. */
   .press-quotes {
     max-width: 1040px;
     margin: 56px auto 0;
     padding: 0 24px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.25fr 1fr;
+    grid-template-areas:
+      "left top    right"
+      "left bottom right";
     gap: 44px;
+    align-items: center;
   }
+  .pq-left   { grid-area: left; }
+  .pq-top    { grid-area: top; }
+  .pq-bottom { grid-area: bottom; }
+  .pq-right  { grid-area: right; }
   .pquote {
     margin: 0;
     display: flex;
@@ -358,7 +368,12 @@
   .pq-link:hover { transform: translateY(-2px); }
   .pq-link:hover .pq-source { color: var(--text); }
   @media (max-width: 760px) {
-    .press-quotes { grid-template-columns: 1fr; margin-top: 40px; gap: 40px; }
+    .press-quotes {
+      grid-template-columns: 1fr;
+      grid-template-areas: "top" "left" "bottom" "right";
+      margin-top: 40px;
+      gap: 40px;
+    }
     .pquote--oneline p { white-space: normal; }
   }
 
@@ -428,21 +443,28 @@
 </section>
 
 <section class="press-quotes" aria-label="What the press said">
-  <a class="pq-link" href="https://www.engadget.com/2174922/cats-lock-mac-app-locks-keyboard-to-prevent-chaos-when-your-cat-tramples-all-over-it/" target="_blank" rel="noopener">
+  <a class="pq-link pq-left" href="https://www.engadget.com/2174922/cats-lock-mac-app-locks-keyboard-to-prevent-chaos-when-your-cat-tramples-all-over-it/" target="_blank" rel="noopener">
     <blockquote class="pquote">
       <div class="pq-logo-slot"><img class="pq-logo" src="assets/press-logos/engadget.png" alt="Engadget"></div>
       <p>&ldquo;Kind of genius in a very silly way.&rdquo;</p>
       <cite class="pq-source">Cheyenne MacDonald</cite>
     </blockquote>
   </a>
-  <a class="pq-link" href="https://youtube.com/shorts/tCM2jEYtoiM" target="_blank" rel="noopener">
+  <a class="pq-link pq-top" href="https://www.digitaltrends.com/computing/cats-lock-is-a-ridiculous-app-that-has-earned-the-right-to-stay-on-my-mac/" target="_blank" rel="noopener">
+    <blockquote class="pquote pquote--sm">
+      <div class="pq-logo-slot"><img class="pq-logo" src="assets/press-logos/digital-trends.png" alt="Digital Trends"></div>
+      <p>&ldquo;Cats Lock is staying on my Mac. It caught the interruption I wanted it to catch and left my own typing alone.&rdquo;</p>
+      <cite class="pq-source">Paulo Vargas</cite>
+    </blockquote>
+  </a>
+  <a class="pq-link pq-bottom" href="https://youtube.com/shorts/tCM2jEYtoiM" target="_blank" rel="noopener">
     <blockquote class="pquote pquote--sm">
       <div class="pq-logo-slot"><img class="pq-logo pq-logo--mark" src="assets/press-logos/ufd-tech.png" alt="UFD Tech"></div>
       <p>&ldquo;The worst part of owning a cat that nobody warns you about just got a massive patch.&rdquo;</p>
       <cite class="pq-source">Brett, UFD Tech</cite>
     </blockquote>
   </a>
-  <a class="pq-link" href="https://9to5mac.com/2026/05/16/indie-app-spotlight-cats-lock-is-a-fun-mac-app-that-solves-cat-keyboard-spam/" target="_blank" rel="noopener">
+  <a class="pq-link pq-right" href="https://9to5mac.com/2026/05/16/indie-app-spotlight-cats-lock-is-a-fun-mac-app-that-solves-cat-keyboard-spam/" target="_blank" rel="noopener">
     <blockquote class="pquote pquote--sm">
       <div class="pq-logo-slot"><img class="pq-logo" src="assets/press-logos/9to5mac.png" alt="9to5Mac"></div>
       <p>&ldquo;Cats Lock is a fun Mac app that solves cat keyboard spam.&rdquo;</p>
